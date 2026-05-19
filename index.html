@@ -30,7 +30,7 @@
   --f:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --fp:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
   --fm:'DM Mono','SF Mono',Consolas,monospace;
-  --hn:76px;--bn:64px;
+  --hn:72px;--bn:64px;
   --ra:10px;--rb:16px;--rc:22px;--rdx:30px;
   --ta:.18s cubic-bezier(.4,0,.2,1);--tb:.26s cubic-bezier(.4,0,.2,1);
   --tc:.38s cubic-bezier(.4,0,.2,1);--td:.44s cubic-bezier(.34,1.56,.64,1);
@@ -47,58 +47,36 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cardPop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(108,154,139,.30)}50%{box-shadow:0 0 0 8px rgba(108,154,139,0)}}
-
-/* ═══ DISCLAIMER ═══ */
 #disc-bar{background:var(--amb);border-bottom:1px solid var(--ambd);padding:9px 14px;display:flex;align-items:flex-start;gap:9px;animation:slideDown .4s both}
 .disc-t{font-size:.73rem;color:#7A4E08;line-height:1.5;flex:1}.disc-t strong{font-weight:700}
 .disc-x{background:var(--amb);border:1px solid var(--ambd);color:#7A4E08;border-radius:7px;padding:4px 13px;min-height:36px;font-size:.71rem;font-weight:700;flex-shrink:0}
-
-/* ═══ HEADER MIT CLARIVA-LOGO ═══ */
 #app-header{
   position:sticky;top:0;z-index:200;
   background:var(--glh);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border-bottom:1px solid var(--bdw);
   box-shadow:0 2px 20px rgba(108,154,139,.11),0 1px 0 rgba(255,255,255,.85);
-  height:var(--hn);display:flex;align-items:center;padding:0 14px;gap:10px
+  height:var(--hn);display:flex;align-items:center;padding:0 10px;gap:8px
 }
 .hdr-menu{width:44px;height:44px;border-radius:var(--ra);background:rgba(108,154,139,.11);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:var(--pd);flex-shrink:0;transition:all var(--ta)}
 .hdr-menu:hover,.hdr-menu:active{background:rgba(108,154,139,.22);transform:scale(1.05)}
-.hdr-logo{flex:1;display:flex;align-items:center;gap:11px;justify-content:center}
-.hdr-logo-icon{flex-shrink:0;filter:drop-shadow(0 2px 10px rgba(23,50,93,.18))}
+.hdr-logo{flex:1;display:flex;align-items:center;justify-content:center}
+.hdr-logo-img{height:44px;max-height:44px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.12))}
 .hdr-logo-text{display:flex;flex-direction:column;line-height:1;align-items:flex-start}
-/* Clariva Name */
 .hdr-name-row{display:flex;align-items:baseline;line-height:1}
-.hdr-clariva{
-  font-family:var(--fp);font-size:1.52rem;font-weight:800;
-  color:var(--logo-navy);letter-spacing:0.5px;line-height:1;
-  -webkit-text-fill-color:var(--logo-navy);
-}
+.hdr-clariva{font-family:var(--fp);font-size:1.52rem;font-weight:800;color:var(--logo-navy);letter-spacing:0.5px;line-height:1;-webkit-text-fill-color:var(--logo-navy);}
 .hdr-v-wrap{position:relative;display:inline-block}
-.hdr-v-pix{
-  position:absolute;top:-9px;right:-7px;
-  width:15px;height:11px;overflow:visible
-}
-.hdr-sub-text{
-  font-family:var(--fp);font-size:0.52rem;font-weight:400;
-  color:var(--logo-gray);margin-top:3px;letter-spacing:0.3px;
-  -webkit-text-fill-color:var(--logo-gray);text-transform:none;
-}
+.hdr-v-pix{position:absolute;top:-9px;right:-7px;width:15px;height:11px;overflow:visible}
+.hdr-sub-text{font-family:var(--fp);font-size:0.52rem;font-weight:400;color:var(--logo-gray);margin-top:3px;letter-spacing:0.3px;-webkit-text-fill-color:var(--logo-gray);text-transform:none;}
 .hdr-search{width:44px;height:44px;border-radius:var(--ra);background:rgba(209,191,165,.14);border:1px solid rgba(209,191,165,.33);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--acd);flex-shrink:0;transition:all var(--ta)}
 .hdr-search:hover,.hdr-search:active{background:rgba(209,191,165,.26);transform:scale(1.05)}
-
-/* ═══ SEARCH OVERLAY ═══ */
 #search-overlay{position:fixed;inset:0;z-index:500;background:rgba(8,18,12,.52);backdrop-filter:blur(10px);display:none;flex-direction:column;padding-top:calc(env(safe-area-inset-top,0px) + 10px)}
 #search-overlay.open{display:flex;animation:fadeIn .22s ease}
 .so-bar{background:var(--glh);margin:0 13px;border-radius:var(--rc);padding:10px 15px;display:flex;align-items:center;gap:10px;box-shadow:var(--s3)}
 .so-input{flex:1;font-size:1rem;color:var(--tx);outline:none;min-height:44px}.so-input::placeholder{color:var(--txl)}
 .so-cancel{color:var(--pd);font-size:.85rem;font-weight:600;padding:0 5px;min-height:44px;cursor:pointer;white-space:nowrap}
 .so-results{flex:1;overflow-y:auto;margin:10px 13px 0;background:var(--glh);border-radius:var(--rc);box-shadow:var(--s2)}.so-results:empty{display:none}
-
-/* ═══ MAIN ═══ */
 #main{padding-bottom:calc(var(--bn) + env(safe-area-inset-bottom,0px) + 10px)}
 .tab-panel{display:none}.tab-panel.active{display:block}
-
-/* ═══ CAT STRIP ═══ */
 .cat-strip{display:flex;gap:8px;padding:13px 14px 11px;background:var(--glh);border-bottom:1px solid var(--bdl);overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;backdrop-filter:blur(10px)}
 .cat-strip::-webkit-scrollbar{display:none}
 .cat-pill{flex-shrink:0;padding:8px 17px;min-height:41px;border-radius:23px;font-size:.77rem;font-weight:700;border:1.5px solid;cursor:pointer;transition:all var(--tb);scroll-snap-align:start;white-space:nowrap;display:flex;align-items:center;gap:6px}
@@ -109,8 +87,6 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 .cat-pill.mass.active{background:linear-gradient(135deg,var(--sec),#7AAAA0);border-color:transparent;color:#fff;box-shadow:0 3px 13px rgba(174,194,182,.36)}
 .cat-pill.ber.active{background:linear-gradient(135deg,var(--acc),var(--acd));border-color:transparent;color:#fff;box-shadow:0 3px 13px rgba(209,191,165,.36)}
 .cat-disc{margin:11px 14px 0;padding:8px 13px;background:rgba(248,228,217,.62);border-left:3px solid var(--acd);border-radius:0 var(--ra) var(--ra) 0;font-size:.72rem;color:#6A4A2A;line-height:1.5}
-
-/* ═══ TF/BKAT CARDS ═══ */
 .tf-list{padding:11px 14px;display:flex;flex-direction:column;gap:9px}
 .tf-card{border-radius:var(--rb);overflow:hidden;box-shadow:var(--s1);transition:box-shadow var(--tb)}.tf-card:hover{box-shadow:var(--s2)}
 .tf-head{display:flex;align-items:center;gap:11px;padding:13px 15px;cursor:pointer;color:#fff;font-weight:700;font-size:.88rem;min-height:53px;transition:opacity var(--ta)}.tf-head:active{opacity:.85}
@@ -125,8 +101,6 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 .bkat-head{display:flex;align-items:center;gap:10px;padding:12px 15px;cursor:pointer;color:#fff;font-weight:700;font-size:.86rem;min-height:51px;transition:opacity var(--ta)}.bkat-head:active{opacity:.85}
 .bkat-arr{margin-left:auto;font-size:.7rem;opacity:.8;transition:transform var(--tb)}.bkat-card.open .bkat-arr{transform:rotate(180deg)}
 .bkat-body{background:var(--glm);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.4)}
-
-/* ═══ CHIPS ═══ */
 .chips-section{padding:10px 14px 5px}
 .chips-lbl{font-size:.6rem;font-weight:800;color:var(--txm);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
 .chips-row{display:flex;flex-wrap:wrap;gap:5px}
@@ -135,16 +109,12 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 .chip-res{background:rgba(174,194,182,.13);border-color:rgba(174,194,182,.38);color:#3A7060}
 .chip-prob{background:var(--rdb);border-color:var(--rdbd);color:var(--rd)}
 .chip-pfleg{background:rgba(209,191,165,.13);border-color:rgba(209,191,165,.38);color:var(--acd)}
-
-/* ═══ SEARCH RESULTS ═══ */
 .sr-group{padding:6px 15px 2px;font-size:.61rem;font-weight:800;color:var(--txm);text-transform:uppercase;letter-spacing:1px}
 .sr-count{padding:10px 15px 6px;font-size:.84rem;font-weight:700;color:var(--pd)}
 .sr-item{padding:12px 15px;font-size:.87rem;line-height:1.5;color:var(--tx);border-bottom:1px solid var(--bdl);cursor:pointer;transition:background var(--ta)}
 .sr-item:last-child{border-bottom:none}.sr-item:hover,.sr-item:active{background:rgba(108,154,139,.08)}
 .sr-item .sm{font-size:.61rem;color:var(--txl);display:block;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
 .sr-none{padding:30px 20px;text-align:center;color:var(--txm);font-size:.88rem}
-
-/* ═══ ANALYSE ═══ */
 .an-wrap{padding:14px}
 .an-card{background:var(--glm);border:1px solid var(--bd);border-radius:var(--rc);padding:15px;margin-bottom:13px;box-shadow:var(--s1);backdrop-filter:blur(8px)}
 .an-card h3{font-weight:700;font-size:.94rem;color:var(--txh);margin-bottom:10px}
@@ -165,8 +135,6 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 .an-rt{font-weight:700;font-size:.88rem;margin-bottom:8px}
 .an-res.ok .an-rt{color:var(--pd)}.an-res.warn .an-rt{color:var(--am)}.an-res.error .an-rt{color:var(--rd)}
 .an-ul{list-style:none;font-size:.82rem;color:var(--tx)}.an-ul li{padding:3px 0;border-bottom:1px solid var(--bdl)}.an-ul li:last-child{border-bottom:none}
-
-/* ═══ DOKU-SET ═══ */
 .ds-wrap{padding:14px}
 .ds-empty{text-align:center;padding:48px 20px;color:var(--txm)}
 .ds-empty-ico{font-size:3.2rem;margin-bottom:12px;display:block}
@@ -181,22 +149,17 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 .ds-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;border-top:1px solid var(--bdl);padding-top:6px}
 .ds-li{font-size:.70rem;color:var(--txm);line-height:1.4}.ds-li b{display:block;font-size:.56rem;color:var(--p);text-transform:uppercase;letter-spacing:.8px;margin-bottom:1px;font-weight:800}
 .ds-del{position:absolute;top:9px;right:9px;background:var(--gl);border:1px solid var(--bd);border-radius:6px;cursor:pointer;color:var(--txm);font-size:.77rem;padding:5px 8px;min-height:30px;transition:all var(--ta)}.ds-del:hover{background:var(--rdb);color:var(--rd);border-color:var(--rdbd)}
-
-/* ═══ BOTTOM NAV ═══ */
 #bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:300;height:calc(var(--bn) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);background:var(--glh);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-top:1px solid var(--bdw);box-shadow:0 -4px 20px rgba(20,40,30,.09);display:flex;align-items:stretch}
 .bn-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;border:none;background:transparent;padding:6px 4px;min-height:54px;position:relative;transition:all var(--ta)}
 .bn-ico{font-size:1.25rem;line-height:1;transition:transform var(--td)}.bn-lbl{font-size:.60rem;font-weight:600;color:var(--txl);letter-spacing:.3px;transition:color var(--ta)}
 .bn-btn.active .bn-ico{transform:scale(1.12)}.bn-btn.active .bn-lbl{color:var(--pd);font-weight:800}.bn-btn:active .bn-ico{transform:scale(.92)}
 .bn-dot{position:absolute;top:7px;right:calc(50% - 20px);min-width:18px;height:18px;border-radius:10px;padding:0 4px;background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;font-size:.58rem;font-weight:800;display:none;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(108,154,139,.40)}.bn-dot.show{display:flex}
 .bn-active-bar{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:28px;height:3px;border-radius:2px 2px 0 0;background:linear-gradient(90deg,var(--p),var(--pd));display:none}.bn-btn.active .bn-active-bar{display:block}
-
-/* ═══ SIDEBAR ═══ */
 #overlay{display:none;position:fixed;inset:0;background:rgba(8,18,12,.36);z-index:400;backdrop-filter:blur(4px)}
 #sidebar{position:fixed;left:-300px;top:0;width:min(290px,88vw);height:100%;background:var(--gls);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-right:1px solid var(--bdw);z-index:450;overflow-y:auto;box-shadow:var(--s5);transition:left var(--tc)}
 #sidebar.open{left:0}
 .sb-hdr{padding:25px 19px 17px;background:linear-gradient(145deg,rgba(23,50,93,.06),rgba(42,126,176,.04));border-bottom:1px solid var(--bd)}
 .sb-logo{display:flex;align-items:center;gap:10px;margin-bottom:4px}
-/* Sidebar logo text */
 .sb-clariva{font-family:var(--fp);font-size:1.2rem;font-weight:800;color:var(--logo-navy);letter-spacing:0.5px;-webkit-text-fill-color:var(--logo-navy)}
 .sb-v-wrap{position:relative;display:inline-block}
 .sb-v-pix{position:absolute;top:-7px;right:-6px;width:12px;height:9px}
@@ -208,16 +171,12 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 .sb-lnk-p{background:linear-gradient(90deg,rgba(108,154,139,.13),rgba(174,194,182,.06));color:var(--pd);font-weight:700}.sb-lnk-p:hover{background:linear-gradient(90deg,rgba(108,154,139,.23),rgba(174,194,182,.13))}
 .sb-badge{display:inline-block;background:linear-gradient(135deg,var(--rd),#A01010);color:#fff;font-size:.52rem;font-weight:800;padding:1px 7px;border-radius:4px;margin-left:auto}
 .sb-lnk-wd{color:var(--rd)!important;background:var(--rdb)!important}
-
-/* ═══ MODAL ═══ */
 #modal{display:none;position:fixed;inset:0;background:rgba(8,18,12,.52);z-index:600;align-items:center;justify-content:center;backdrop-filter:blur(12px)}
 #modal.show{display:flex;animation:fadeIn .26s var(--td)}
 .mbox{background:var(--glh);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.82);width:92%;max-width:520px;max-height:88%;border-radius:var(--rdx);padding:22px;overflow-y:auto;box-shadow:var(--s5)}
 .mttl{color:var(--txh);font-weight:700;border-bottom:2px solid var(--p);padding-bottom:9px;margin:0 0 14px;font-size:1rem}
 .mbdy{font-size:.86rem;line-height:1.80;color:var(--tx);white-space:pre-wrap}
 .mbtn{margin-top:16px;width:100%;padding:13px;min-height:48px;border:none;border-radius:var(--rb);font-weight:800;font-size:.92rem;cursor:pointer;background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;box-shadow:0 4px 16px rgba(108,154,139,.28);transition:all var(--ta)}.mbtn:hover{transform:translateY(-1px)}
-
-/* ═══ CONSENT ═══ */
 #consent{display:none!important;position:fixed;inset:0;background:rgba(6,15,10,.92);z-index:9000;align-items:center;justify-content:center;backdrop-filter:blur(18px);padding:16px}
 #consent.show{display:flex!important}
 .cb{background:var(--glh);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.82);border-radius:var(--rdx);width:100%;max-width:500px;max-height:92vh;overflow-y:auto;box-shadow:var(--s5);display:flex;flex-direction:column;animation:fadeIn .4s var(--td) both}
@@ -238,28 +197,18 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 #consentBtn.ready{background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;box-shadow:0 4px 18px rgba(108,154,139,.32);animation:glow 2s infinite}
 #consentBtn.ready:hover{transform:translateY(-1px);animation:none}
 #consentBtn:disabled{cursor:not-allowed}
-
-/* ═══ TOAST ═══ */
 #toast{position:fixed;top:calc(var(--hn) + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:linear-gradient(135deg,var(--p),var(--pd));border:1px solid rgba(255,255,255,.25);color:#fff;padding:9px 18px;border-radius:28px;font-size:.81rem;font-weight:700;z-index:9999;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;white-space:nowrap;box-shadow:var(--s3)}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* ═══ LEGAL STYLES ═══ */
 .ld{font-size:.86rem;line-height:1.80;color:var(--tx)}.ld h2{font-size:.94rem;font-weight:700;color:var(--pd);margin:14px 0 5px;padding-bottom:3px;border-bottom:1px solid var(--bd)}.ld h2:first-child{margin-top:0}.ld h3{font-size:.82rem;font-weight:700;color:var(--txh);margin:9px 0 3px}.ld p{margin:0 0 5px}.ld ul{margin:3px 0 8px 16px}.ld li{margin-bottom:3px;list-style:disc}
 .lbg{display:inline-block;background:rgba(108,154,139,.13);color:var(--pd);border:1px solid rgba(108,154,139,.30);border-radius:5px;font-size:.64rem;font-weight:800;padding:2px 8px;margin-bottom:8px}
 .lwn{background:var(--amb);border:1px solid var(--ambd);border-radius:7px;padding:8px 12px;font-size:.76rem;color:#7A4E08;margin:6px 0}
 .lin{background:rgba(108,154,139,.09);border:1px solid rgba(108,154,139,.26);border-radius:7px;padding:8px 12px;font-size:.76rem;color:var(--pd);margin:6px 0}
 .ld hr{border:none;border-top:1px solid var(--bdl);margin:11px 0}
-
-/* ═══ LANG DROPDOWN ═══ */
 #langDropdown{position:fixed;bottom:calc(var(--bn) + env(safe-area-inset-bottom,0px) + 7px);right:9px;background:var(--glh);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.82);border-radius:var(--rc);box-shadow:var(--s4);z-index:400;min-width:172px;overflow:hidden;display:none}
 .lo-section{padding:7px 14px 3px;font-size:.57rem;font-weight:800;color:var(--txm);text-transform:uppercase;letter-spacing:1.2px;background:rgba(108,154,139,.06)}
 .lo{padding:9px 14px;min-height:44px;font-size:.85rem;cursor:pointer;border-bottom:1px solid var(--bdl);color:var(--tx);display:flex;align-items:center;gap:8px;transition:background var(--ta)}.lo:hover{background:rgba(108,154,139,.09)}.lo:last-child{border-bottom:none}.lo.active{background:linear-gradient(90deg,rgba(108,154,139,.14),rgba(174,194,182,.07));color:var(--pd);font-weight:700}
-
-/* ═══ RESPONSIVE ═══ */
 @media(max-width:480px){
-  .hdr-clariva{font-size:1.28rem}
-  .hdr-sub-text{display:none}
-  .hdr-logo{gap:8px}
+  .hdr-logo-img{height:36px}
   .b-item{font-size:.85rem}
   .ds-grid{grid-template-columns:1fr}
 }
@@ -267,43 +216,12 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 </head>
 <body>
 
-<!-- ══ CONSENT ══ -->
+<!-- CONSENT -->
 <div id="consent" role="dialog" aria-modal="true">
   <div class="cb">
     <div class="cb-hdr">
-      <div class="cb-logo">
-        <!-- Mini logo icon für Consent -->
-        <svg width="38" height="38" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="cg1" x1="15" y1="105" x2="80" y2="15" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#17325D"/>
-              <stop offset="55%" stop-color="#2A8FA8"/>
-              <stop offset="100%" stop-color="#50C880"/>
-            </linearGradient>
-            <linearGradient id="cg2" x1="35" y1="95" x2="95" y2="20" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#2A8FA8"/>
-              <stop offset="100%" stop-color="#65D090"/>
-            </linearGradient>
-            <linearGradient id="cg3" x1="55" y1="85" x2="105" y2="25" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#3CB8C0"/>
-              <stop offset="100%" stop-color="#78D898"/>
-            </linearGradient>
-          </defs>
-          <path d="M 26,100 C 10,97 4,80 8,64 C 13,46 30,40 44,48 C 56,54 56,70 46,78 C 38,84 26,82 22,88 C 18,94 22,102 26,100Z" fill="#17325D"/>
-          <path d="M 30,84 C 22,65 26,40 44,24 C 56,12 72,16 70,34 C 68,46 54,50 50,62 C 46,72 48,84 36,88" stroke="url(#cg1)" stroke-width="7" stroke-linecap="round" fill="none"/>
-          <path d="M 44,76 C 38,58 46,34 62,22 C 72,12 86,20 82,36 C 79,48 67,52 64,62" stroke="url(#cg2)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
-          <path d="M 57,68 C 54,55 62,34 74,24 C 84,15 94,24 90,40 C 87,50 78,54 76,63" stroke="url(#cg3)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <rect x="34" y="55" width="27" height="35" rx="3.5" fill="white" stroke="#17325D" stroke-width="3"/>
-          <rect x="41" y="49" width="27" height="35" rx="3.5" fill="white" stroke="#17325D" stroke-width="3"/>
-          <line x1="45" y1="60" x2="63" y2="60" stroke="#17325D" stroke-width="2.2"/>
-          <line x1="45" y1="67" x2="63" y2="67" stroke="#17325D" stroke-width="2.2"/>
-          <line x1="45" y1="74" x2="57" y2="74" stroke="#17325D" stroke-width="2.2"/>
-          <path d="M 29,46 L 31.5,39 L 34,46 L 41,48.5 L 34,51 L 31.5,58 L 29,51 L 22,48.5 Z" fill="#17325D"/>
-        </svg>
-        <div style="display:flex;flex-direction:column;line-height:1">
-          <div class="cb-lname">Clari<span style="position:relative;display:inline-block">v<svg style="position:absolute;top:-8px;right:-7px;width:14px;height:10px" viewBox="0 0 14 10"><rect x="0" y="7" width="3.5" height="3.5" fill="#3B8ED0"/><rect x="5.5" y="3.5" width="3.5" height="3.5" fill="#3B8ED0"/><rect x="11" y="0" width="3.5" height="3.5" fill="#3B8ED0"/></svg></span>a</div>
-          <div class="cb-lsub">digital documentation Suite</div>
-        </div>
+      <div class="cb-logo" style="margin-bottom:12px;">
+        <img src="data:image/jpeg;base64,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" alt="CLARIVA Care Solution" style="width:100%;max-width:240px;height:auto;display:block;border-radius:8px;" />
       </div>
       <div class="cb-t">Rechtliche Hinweise &amp; Zustimmung</div>
       <div class="cb-s">Bitte lies die folgenden Dokumente sorgfältig und bestätige deine Zustimmung.</div>
@@ -320,33 +238,11 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 
 <div id="overlay" onclick="closeSidebar()"></div>
 
-<!-- ══ SIDEBAR ══ -->
+<!-- SIDEBAR -->
 <nav id="sidebar">
-  <div class="sb-hdr">
-    <div class="sb-logo">
-      <!-- Sidebar Logo Icon (kleiner) -->
-      <svg width="38" height="38" viewBox="0 0 120 120" fill="none">
-        <defs>
-          <linearGradient id="sg1" x1="15" y1="105" x2="80" y2="15" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#17325D"/><stop offset="55%" stop-color="#2A8FA8"/><stop offset="100%" stop-color="#50C880"/></linearGradient>
-          <linearGradient id="sg2" x1="35" y1="95" x2="95" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2A8FA8"/><stop offset="100%" stop-color="#65D090"/></linearGradient>
-          <linearGradient id="sg3" x1="55" y1="85" x2="105" y2="25" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3CB8C0"/><stop offset="100%" stop-color="#78D898"/></linearGradient>
-        </defs>
-        <path d="M 26,100 C 10,97 4,80 8,64 C 13,46 30,40 44,48 C 56,54 56,70 46,78 C 38,84 26,82 22,88 C 18,94 22,102 26,100Z" fill="#17325D"/>
-        <path d="M 30,84 C 22,65 26,40 44,24 C 56,12 72,16 70,34 C 68,46 54,50 50,62 C 46,72 48,84 36,88" stroke="url(#sg1)" stroke-width="7" stroke-linecap="round" fill="none"/>
-        <path d="M 44,76 C 38,58 46,34 62,22 C 72,12 86,20 82,36 C 79,48 67,52 64,62" stroke="url(#sg2)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
-        <path d="M 57,68 C 54,55 62,34 74,24 C 84,15 94,24 90,40 C 87,50 78,54 76,63" stroke="url(#sg3)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <rect x="34" y="55" width="27" height="35" rx="3.5" fill="white" stroke="#17325D" stroke-width="3"/>
-        <rect x="41" y="49" width="27" height="35" rx="3.5" fill="white" stroke="#17325D" stroke-width="3"/>
-        <line x1="45" y1="60" x2="63" y2="60" stroke="#17325D" stroke-width="2.2"/>
-        <line x1="45" y1="67" x2="63" y2="67" stroke="#17325D" stroke-width="2.2"/>
-        <line x1="45" y1="74" x2="57" y2="74" stroke="#17325D" stroke-width="2.2"/>
-        <path d="M 29,46 L 31.5,39 L 34,46 L 41,48.5 L 34,51 L 31.5,58 L 29,51 L 22,48.5 Z" fill="#17325D"/>
-      </svg>
-      <div>
-        <div class="sb-clariva">Clari<span class="sb-v-wrap">v<svg class="sb-v-pix" viewBox="0 0 12 9"><rect x="0" y="6" width="3" height="3" fill="#3B8ED0"/><rect x="4.5" y="3" width="3" height="3" fill="#3B8ED0"/><rect x="9" y="0" width="3" height="3" fill="#3B8ED0"/></svg></span>a</div>
-        <div class="sb-slogan">digital documentation Suite</div>
-      </div>
-    </div>
+  <div class="sb-hdr" style="padding:16px 14px;">
+    <img src="data:image/jpeg;base64,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" alt="CLARIVA Care Solution" style="width:100%;max-width:220px;height:auto;display:block;border-radius:8px;" />
+  </div>
   </div>
   <div class="sb-disc"><div class="sb-disc-t">⚕️ Haftungsausschluss</div>Fachliche Verantwortung verbleibt beim Pflegepersonal!</div>
   <div class="sb-sec">Navigation</div>
@@ -369,101 +265,32 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
   <a href="https://www.dnqp.de" target="_blank" rel="noopener" class="sb-lnk">📋 DNQP</a>
 </nav>
 
-<!-- ══ MODAL ══ -->
+<!-- MODAL -->
 <div id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal()">
   <div class="mbox"><h3 class="mttl" id="mTitle"></h3><div class="mbdy" id="mBody"></div><div id="mBodyHtml" style="display:none"></div><button class="mbtn" onclick="closeModal()" id="modal-close-btn">Gelesen &amp; Akzeptiert</button></div>
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
 
-<!-- ══ SEARCH OVERLAY ══ -->
+<!-- SEARCH OVERLAY -->
 <div id="search-overlay">
   <div class="so-bar"><span>🔍</span><input id="searchInput" class="so-input" type="search" placeholder="Diagnose, Problem, Ressource …" oninput="onSearch(this.value)" autocomplete="off" spellcheck="false"><button class="so-cancel" onclick="closeSearch()">Abbrechen</button></div>
   <div class="so-results" id="soResults"></div>
 </div>
 
-<!-- ══ DISCLAIMER BAR ══ -->
+<!-- DISCLAIMER BAR -->
 <div id="disc-bar" role="alert">
   <div class="disc-t"><strong>⚕️ Haftungsausschluss:</strong> Clariva ist eine Formulierungshilfe. Die <strong>fachliche Verantwortung</strong> verbleibt beim Pflegepersonal.</div>
   <button class="disc-x" onclick="closeBanner()">OK</button>
 </div>
 
-<!-- ══ HEADER MIT ORIGINALGETREUEM CLARIVA-LOGO ══ -->
+<!-- HEADER MIT CLARIVA CARE SOLUTION LOGO (PNG, transparenter Hintergrund) -->
 <header id="app-header">
   <button class="hdr-menu" onclick="openSidebar()" aria-label="Menü">☰</button>
-
-  <div class="hdr-logo">
-    <!-- ═══ CLARIVA LOGO ICON – SVG Rekonstruktion aus Bild ═══ -->
-    <svg class="hdr-logo-icon" width="54" height="54" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Hauptwelle: Navy → Teal → Grün -->
-        <linearGradient id="hg1" x1="15" y1="105" x2="80" y2="15" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#17325D"/>
-          <stop offset="50%" stop-color="#2A8FA8"/>
-          <stop offset="100%" stop-color="#50C880"/>
-        </linearGradient>
-        <!-- Mittelwelle: Teal → Grün -->
-        <linearGradient id="hg2" x1="35" y1="95" x2="95" y2="20" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#2A8FA8"/>
-          <stop offset="100%" stop-color="#65D090"/>
-        </linearGradient>
-        <!-- Innenwelle: Helles Teal → Hellgrün -->
-        <linearGradient id="hg3" x1="55" y1="85" x2="105" y2="25" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#3CB8C0"/>
-          <stop offset="100%" stop-color="#78D898"/>
-        </linearGradient>
-      </defs>
-
-      <!-- ── Blauer Basis-Wirbel (dunkles Navy) ── -->
-      <path d="M 26,100 C 10,97 4,80 8,64 C 13,46 30,40 44,48 C 56,54 56,70 46,78 C 38,84 26,82 22,88 C 18,94 22,102 26,100Z"
-            fill="#17325D"/>
-
-      <!-- ── Welle 1: breiteste, außen links, geht am höchsten ── -->
-      <path d="M 30,84 C 22,65 26,40 44,24 C 56,12 72,16 70,34 C 68,46 54,50 50,62 C 46,72 48,84 36,88"
-            stroke="url(#hg1)" stroke-width="7.5" stroke-linecap="round" fill="none"/>
-
-      <!-- ── Welle 2: mittlere Breite ── -->
-      <path d="M 44,76 C 38,58 46,34 62,22 C 72,12 86,20 82,36 C 79,48 67,52 64,62"
-            stroke="url(#hg2)" stroke-width="5.8" stroke-linecap="round" fill="none"/>
-
-      <!-- ── Welle 3: dünn, ganz rechts innen ── -->
-      <path d="M 57,68 C 54,55 62,34 74,24 C 84,15 94,24 90,40 C 87,50 78,54 76,63"
-            stroke="url(#hg3)" stroke-width="4.2" stroke-linecap="round" fill="none"/>
-
-      <!-- ── Dokument Seite 1 (hinten, leicht versetzt) ── -->
-      <rect x="34" y="55" width="27" height="35" rx="3.5" fill="white" stroke="#17325D" stroke-width="2.8"/>
-      <!-- ── Dokument Seite 2 (vorne) ── -->
-      <rect x="41" y="49" width="27" height="35" rx="3.5" fill="white" stroke="#17325D" stroke-width="2.8"/>
-      <!-- ── Dokumentlinien ── -->
-      <line x1="45" y1="60" x2="63" y2="60" stroke="#17325D" stroke-width="2.2"/>
-      <line x1="45" y1="67" x2="63" y2="67" stroke="#17325D" stroke-width="2.2"/>
-      <line x1="45" y1="74" x2="57" y2="74" stroke="#17325D" stroke-width="2.2"/>
-
-      <!-- ── 4-Punkt Funkelstern ── -->
-      <path d="M 29,46 L 31.5,39 L 34,46 L 41,48.5 L 34,51 L 31.5,58 L 29,51 L 22,48.5 Z"
-            fill="#17325D"/>
-    </svg>
-
-    <!-- ═══ CLARIVA TEXTLOGO MIT V-PIXEL-DETAIL ═══ -->
-    <div class="hdr-logo-text">
-      <div class="hdr-name-row">
-        <span class="hdr-clariva">Clari<span class="hdr-v-wrap">v
-          <!-- V-Pixel-Detail: 3 aufsteigende blaue Quadrate (wie im Bild) -->
-          <svg class="hdr-v-pix" viewBox="0 0 15 11" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0"   y="7.5" width="4" height="4" fill="#3B8ED0" rx="0.5"/>
-            <rect x="5.5" y="3.5" width="4" height="4" fill="#3B8ED0" rx="0.5"/>
-            <rect x="11"  y="0"   width="4" height="4" fill="#3B8ED0" rx="0.5"/>
-          </svg>
-        </span>a</span>
-      </div>
-      <!-- Subtitle exakt wie im Logo-Bild -->
-      <span class="hdr-sub-text" id="suiteSub">digital documentation Suite</span>
-    </div>
-  </div>
-
+  <div class="hdr-logo" style="flex:1;display:flex;align-items:center;justify-content:center;height:54px;padding:4px 0;"><img src="data:image/jpeg;base64,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" alt="CLARIVA Care Solution" style="height:100%;max-height:100%;width:auto;object-fit:contain;display:block;"></div>
   <button class="hdr-search" onclick="openSearch()" aria-label="Suchen">🔍</button>
 </header>
 
-<!-- ══ MAIN ══ -->
+<!-- MAIN -->
 <div id="main">
   <div id="panel-bausteine" class="tab-panel active">
     <div class="cat-strip" id="catStrip">
@@ -517,25 +344,30 @@ button,input,textarea,select{-webkit-appearance:none;appearance:none;font:inheri
 </div>
 
 <script>
+// ═══════════════════════════════════════════════════════
+// CLARIVA v4.5 – Vollständige Datenbasis
+// Änderungen: PNG-Logo (transparent), DNQP-Direktlinks
+// ═══════════════════════════════════════════════════════
+
 var TF=["Kognition und Kommunikation","Mobilität und Beweglichkeit","Krankheitsbezogene Anforderungen","Selbstversorgung","Leben in sozialen Beziehungen","Haushaltsführung & Tagesstruktur"];
 var BKAT=["Sturz","Dekubitus","Inkontinenz","Ernährung","Kontraktur","Schmerz","Exsikkose","Wohnraumanpassung & Hilfsmittel","Pflege & Finanzierung"];
 var TF_COLORS=["linear-gradient(135deg,#5A8A7C,#3A6A5C)","linear-gradient(135deg,#6A9A90,#4A7A70)","linear-gradient(135deg,#7AAA9C,#5A8A84)","linear-gradient(135deg,#8ABAB0,#6A9A98)","linear-gradient(135deg,#C5A882,#A08060)","linear-gradient(135deg,#7A9E92,#5A7E72)"];
 var BKAT_COLORS=["linear-gradient(135deg,#5A8A7C,#3A6A5C)","linear-gradient(135deg,#6A9A8A,#4A7A6A)","linear-gradient(135deg,#7AAAA0,#5A8A90)","linear-gradient(135deg,#8ABAB0,#6A9A98)","linear-gradient(135deg,#9ACAC0,#7AAAB0)","linear-gradient(135deg,#C5A882,#A08060)","linear-gradient(135deg,#8AB8C8,#6A98B8)","linear-gradient(135deg,#6A9A7C,#4A7A5C)","linear-gradient(135deg,#8A9AC8,#6A7AB8)"];
 
+// DNQP – Direkte PDF-Links zur DNQP-Website
 var DNQP=[
-{n:"Sturzprophylaxe in der Pflege (2006, 1. Akt. 2013)",z:"ZIEL: Jeder sturzgefährdete Patient/Bewohner erhält systematische Risikoeinschätzung und individuell angepasste Maßnahmen.\n\nS1: Evidenzbasierte Verfahrensregelung. Schulung Tinetti-Test und Prävention.\n\nS2: Strukturierte Sturzrisikoeinschätzung bei Aufnahme und Zustandsänderung. Maßnahmen: Schuhwerk, Stolperfallen, Gehtraining, Hüftprotektor, Nachtlicht.\n\nS3: Klient kennt Sturzrisiko. Sturzereignisse systematisch ausgewertet.\n\nS4: DNQP Sturzprophylaxe, 1. Akt. 2013. Tinetti-Test, Morse Fall Scale."},
-{n:"Dekubitusprophylaxe in der Pflege (2000, 2. Akt. 2017)",z:"ZIEL: Strukturierte Einschätzung des Dekubitusrisikos und individuelle Prophylaxe.\n\nS1: Verfahrensregelung nach EPUAP. Schulung Braden-Skala.\n\nS2: Braden-Skala bei Aufnahme. Positionswechsel alle 2h, 30-Grad-Schräglagerung, tägliche Hautinspektion.\n\nS3: Keine Dekubiti oder Frühdiagnose.\n\nS4: DNQP Dekubitusprophylaxe, 2. Akt. 2017. EPUAP/NPUAP-Leitlinien."},
-{n:"Schmerzmanagement in der Pflege (2005, 2. Akt. 2020)",z:"ZIEL: Angemessenes individuell angepasstes Schmerzmanagement.\n\nS1: Schulung NRS, VAS, BESD.\n\nS2: Initiale Schmerzeinschätzung. Score 30 min nach Medikamentengabe wiederholen.\n\nS3: Schmerzen auf erträgliches Maß reduziert.\n\nS4: DNQP Schmerzmanagement, 2. Akt. 2020. WHO-Stufenschema."},
-{n:"Ernährungsmanagement (2010, 1. Akt. 2017)",z:"ZIEL: Individuelles Ernährungsmanagement bei Mangelernährungsrisiko.\n\nS1: Schulung MNA, MUST, Dysphagie.\n\nS2: Mangelernährungs-Screening. Konsistenzanpassung, angereicherte Kost.\n\nS3: Mangelernährung früh erkannt und behandelt.\n\nS4: DNQP Ernährungsmanagement, 1. Akt. 2017. Aspirationsprophylaxe 45–90°."},
-{n:"Förderung der Harnkontinenz (2006, 1. Akt. 2014)",z:"ZIEL: Individuelles Kontinenzmanagement.\n\nS2: Miktionsprotokoll, Blasentraining, Beckenbodenübungen, Toilettenassistenz alle 2–3h.\n\nS3: Inkontinenz reduziert oder Kontinenz wiederhergestellt.\n\nS4: DNQP Harnkontinenz, 1. Akt. 2014. Trinkmenge 1,5–2 l/Tag."},
-{n:"Beziehungsgestaltung bei Menschen mit Demenz (2018)",z:"ZIEL: Vertrauensvolle, personenzentrierte Beziehung.\n\nS1: Schulung Validation, Reminiszenz, Biographiearbeit.\n\nS2: Täglich validierende Gespräche. ROT, Biographiearbeit.\n\nS3: Würde, Geborgenheit, soziale Teilhabe.\n\nS4: DNQP Beziehungsgestaltung Demenz (2018). Validation (Naomi Feil)."},
-{n:"Pflege von Menschen mit chronischen Wunden (2008, 1. Akt. 2015)",z:"ZIEL: Systematische Wundeinschätzung und leitliniengerechte Versorgung.\n\nS2: Wunde systematisch eingeschätzt (Größe, Exsudat, Foto). Verbandwechsel aseptisch.\n\nS3: Dokumentierter Heilungsverlauf.\n\nS4: DNQP Chronische Wunden, 1. Akt. 2015. TIME-Konzept."},
-{n:"Erhaltung und Förderung der Mobilität (2014, 1. Akt. 2020)",z:"ZIEL: Individuelles Mobilitätsmanagement.\n\nS2: Tinetti-Test, Barthel-Index. Gehtraining, Balanceübungen, Kinästhetik.\n\nS3: Mobilität erhalten oder verbessert.\n\nS4: DNQP Mobilität, 1. Akt. 2020. Barthel-Index. Bobath-Konzept."},
-{n:"Mundgesundheit in der Pflege (2022)",z:"ZIEL: Individuelle Unterstützung zur Erhaltung der Mundgesundheit.\n\nS2: Mundpflegemaßnahmen 2x täglich. OHAT-Einschätzung.\n\nS3: Mundgesundheit erhalten. Aspirationsrisiko reduziert.\n\nS4: DNQP Mundgesundheit (2022). OHAT."},
-{n:"Pflege von Menschen mit chronischen Schmerzen (2020)",z:"ZIEL: Auf Selbstmanagement ausgerichtetes Schmerzkonzept.\n\nS2: Differenzierte Schmerzeinschätzung. Selbstmanagementstrategien entwickelt.\n\nS3: Selbstmanagementkompetenz gestärkt.\n\nS4: DNQP Chronische Schmerzen (2020). PMR. Palliativversorgung."}
+{n:"Sturzprophylaxe",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Sturzprophylaxe/Sturz_2Akt_Auszug.pdf"},
+{n:"Dekubitusprophylaxe",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Dekubitusprophylaxe/Deku_PP_Auszug.pdf"},
+{n:"Entlassungsmanagement",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Entlassungsmanagement/Entlassung_2Akt_Auszug.pdf"},
+{n:"Schmerzmanagement",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Schmerzmanagement/Schmerz-Akt2020_Auszug.pdf"},
+{n:"Kontinenzförderung",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Kontinenzfoerderung/Kontinenz_Akt2024_Auszug.pdf"},
+{n:"Chronische Wunden",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Chronische_Wunden/cWunden_2Akt_Auszug.pdf"},
+{n:"Ernährungsmanagement",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Ernaehrungsmanagement/Ernaehrung_Akt_Auszug.pdf"},
+{n:"Demenz – Beziehungsgestaltung",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Demenz/Demenz_AV_Auszug.pdf"},
+{n:"Mundgesundheit",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Mundgesundheit/Mund_AV_Auszug.pdf"},
+{n:"Hautintegrität",url:"https://www.dnqp.de/fileadmin/HSOS/Homepages/DNQP/Dateien/Expertenstandards/Hautintegritaet/Haut_AV_Auszug.pdf"}
 ];
 
-/* ══ VOLLSTÄNDIGE DATENBANK – SEQUENZIELL GEORDNET ══ */
 var DB={
 sis:{
 "Kognition und Kommunikation":[
@@ -563,7 +395,7 @@ sis:{
 "Mobilität und Beweglichkeit":[
   "Klient ist im Gang unsicher, nutzt den Rollator eigenständig und benötigt punktuell Hilfe beim Aufstehen.",
   "Transfer aus dem Bett ist kraftgemindert; Klient kann sich mithilfe der Aufrichthilfe aufsetzen.",
-  "Klient zeigt Sturzangst bei Transfers; bewegt sich bei verbaler Anleitung deutlich sicherer.",
+  "Klient zeigt sturzbedingte Ängste bei Transfers; bewegt sich bei verbaler Anleitung deutlich sicherer.",
   "Gangbild durch arthrotische Veränderungen beider Kniegelenke instabil; Sturzrisiko erhöht.",
   "Gleichgewicht im freien Stand ist unsicher; Klient sichert sich instinktiv ab.",
   "Fußheberschwäche beidseits führt zu Schlurfen; Klient achtet bewusst auf Bodenunebenheiten.",
@@ -573,14 +405,14 @@ sis:{
   "Treppensteigen aufgrund von Schwindel und Gangunsicherheit nicht mehr sicher möglich.",
   "Feinmotorik beider Hände durch Tremor eingeschränkt; grobmotorische Tätigkeiten gelingen sicher.",
   "Wahrnehmung der linken Körperseite nach Schlaganfall eingeschränkt (Neglect).",
-  "Gangbild stabil und sicher; Klient bewegt sich ohne Hilfsmittel eigenständig in der Einrichtung.",
+  "Gangbild ausdauernd, stabil und sicher; Klient bewegt sich ohne Hilfsmittel eigenständig in der Einrichtung.",
   "Klient führt täglich eigenständig Dehn- und Kräftigungsübungen zur Mobilitätserhaltung durch.",
   "Hilfsmittel (Rollator, Gehstock) werden sicher und situationsgerecht eingesetzt.",
   "Klient trägt Hüftprotektor konsequent und versteht dessen Schutzfunktion."
 ],
 "Krankheitsbezogene Anforderungen":[
   "Klient ist aufgrund kognitiver Defizite nicht in der Lage, Medikamente eigenständig zu verwalten oder Vitalwerte einzuschätzen.",
-  "Klient vergisst Medikamenteneinnahme; kooperiert bei Einzeldosierung durch Pfk.",
+  "Klient vergisst die verordnete Medikamenteneinnahme; kooperiert bei Einzeldosierung durch Pfk.",
   "Blutzuckerselbstmessung durch Sehminderung nicht möglich; Klient bereitet Utensilien vor.",
   "Klient erkennt Unterzuckerungssymptome nicht sicher; meldet allgemeines Unwohlsein sofort.",
   "Hautinspektion der Füße bei Diabetes mellitus vernachlässigt; duldet tägliche Inspektion.",
@@ -647,80 +479,80 @@ sis:{
 },
 m:{
 "Kognition und Kommunikation":[
-  "Pfk. installiert gemeinsam mit dem Klienten Piktogramm-Orientierungssystem im Wohnbereich; Klient nutzt die Symbole täglich zur eigenständigen Orientierung.",
-  "Pfk. reduziert vor jeder Ansprache aktiv Umgebungsgeräusche (Fernseher aus, Tür schließen) im Bewohnerzimmer; Klient kommuniziert in ruhiger Atmosphäre zielgerichteter.",
-  "Pfk. kontrolliert täglich vor dem Aufstehen Funktionsfähigkeit und Sitz des Hörgeräts im Bewohnerzimmer; Klient setzt das Hörgerät mit Anleitung selbstständig ein.",
-  "Pfk. führt täglich morgens mit dem Klienten eine Morgenrunde (Datum, Wetter, Tagesplan) am Kalender im Bewohnerzimmer durch; Klient ergänzt fehlende Angaben eigenständig.",
-  "Pfk. stellt täglich aktuellen Kalender bereit und führt kurzes ROT-Training am Tisch im Bewohnerzimmer durch; Klient benennt Datum und Wochentag eigenständig.",
-  "Pfk. spricht den Klienten bei jedem Kontakt mit Namen an und hält dabei Augenhöhe und Blickkontakt; Klient reagiert auf Ansprache und Namensnennung.",
-  "Pfk. nutzt bei jeder Ansprache klare, kurze Sätze und unterstützt die Verständigung durch Mimik und Gestik; Klient bestätigt das Verständnis durch Geste oder verbale Antwort.",
-  "Pfk. gibt bei jeder Ansprache ausschließlich eine klare Handlungsanweisung in einfacher Sprache; Klient führt die Handlung aktiv durch.",
-  "Pfk. erklärt dem Klienten jeden Pflegeschritt vor der Durchführung; Klient signalisiert aktive Zustimmung durch Nicken oder verbale Bestätigung.",
-  "Pfk. stellt dem Klienten strukturierte Auswahlfragen mit maximal zwei Optionen; Klient trifft eigenständig eine Entscheidung und kommuniziert sie.",
-  "Pfk. führt täglich Kurzaktivierungen zur Orientierungsförderung im Bewohnerzimmer durch; Klient benennt dabei Datum, Wetter und Tagesplan aktiv mit.",
-  "Pfk. führt täglich validierende Einzelgespräche mit dem Klienten anhand der persönlichen Biographiemappe im Bewohnerzimmer durch; Klient benennt Erinnerungen eigenständig.",
-  "Pfk. führt täglich gezielte Biographiearbeit mit dem Klienten anhand seines Fotoalbums im Bewohnerzimmer durch; Klient erzählt Erinnerungen in eigenen Worten.",
-  "Pfk. leitet den Klienten täglich für 10 Minuten zu kognitiven Aktivierungsübungen mit altersgerechten Spielen am Tisch im Gemeinschaftsraum an; Klient nimmt aktiv teil.",
-  "Pfk. richtet täglich Videotelefonie mit Angehörigen für den Klienten auf dem Tablet ein; Klient führt das Gespräch aktiv mit Unterstützung bei der Bedienung.",
-  "Pfk. leitet den Klienten wöchentlich zu einem Gedächtnistraining mit Wortspielen in der Kleingruppe im Gemeinschaftsraum an; Klient vervollständigt Sätze eigenständig.",
-  "Pfk. führt täglich abends eine Tagesreflexion mit dem Klienten im Bewohnerzimmer durch; Klient benennt einen schönen Moment des Tages."
+  "Pfk. installiert gemeinsam mit dem Bewohner ein Piktogramm-Orientierungssystem im Wohnbereich und überprüft die Erkennbarkeit; Klient nutzt die angebrachten Symbole täglich zur selbstständigen Orientierung im Raum.",
+  "Pfk. reduziert vor jedem Gespräch aktiv störende Umgebungsgeräusche (TV aus, Tür schließen) im Raum; Klient fokussiert die Ansprache und kommuniziert in der ruhigen Atmosphäre zielgerichtet.",
+  "Pfk. kontrolliert täglich vor dem Aufstehen die Funktionsfähigkeit und den exakten Sitz des Hörgeräts im Bad; Klient setzt das überprüfte Hörgerät unter verbaler Anleitung selbstständig ein.",
+  "Pfk. führt täglich morgens strukturiert eine Morgenrunde (Datum, Wetter, Tagesplan) am Kalender durch; Klient ergänzt fehlende tagesaktuelle Angaben aktiv und eigenständig.",
+  "Pfk. stellt täglich den aktuellen Großdruck-Kalender bereit und führt ein kurzes kognitives ROT-Training durch; Klient benennt das aktuelle Datum sowie den Wochentag eigenständig am Tisch.",
+  "Pfk. spricht den Bewohner bei jedem Erstkontakt klar mit Namen an, hält konstanten Blickkontakt und Augenhöhe; Klient fixiert das Gegenüber und reagiert adäquat auf die Namensnennung.",
+  "Pfk. nutzt bei jeder Ansprache kurze, eindeutige Sätze und unterstützt die Verständigung durch klare Mimik; Klient bestätigt das Verständnis der Information durch Gesten oder eine verbale Antwort.",
+  "Pfk. gibt bei komplexen Handlungen ausschließlich eine einzelne, klare Handlungsanweisung in einfacher Sprache; Klient erfasst die Teilaufgabe und führt die geforderte Handlung aktiv durch.",
+  "Pfk. erklärt vor der Durchführung kleinschrittig jeden anstehenden pflegerischen Handgriff direkt am Klienten; Klient signalisiert seine aktive Zustimmung durch Kopfnicken oder eine kurze verbale Bestätigung.",
+  "Pfk. stellt zur Entscheidungsfindung strukturierte Auswahlfragen mit maximal zwei klaren Optionen; Klient trifft eigenständig eine Auswahl und kommuniziert diese verbal oder durch Zeigen.",
+  "Pfk. führt täglich biographieorientierte Kurzaktivierungen zur basalen Orientierungsförderung durch; Klient benennt tageszeitliche Strukturen, das Wetter und den anstehenden Menüplan aktiv mit.",
+  "Pfk. führt täglich ein validierendes Einzelgespräch auf Basis der persönlichen Biographiemappe durch; Klient teilt emotionale Inhalte und benennt persönliche Erinnerungen eigenständig im Zimmer.",
+  "Pfk. führt täglich eine gezielte reminiszenzbasierte Biographiearbeit anhand des privaten Fotoalbums durch; Klient blättert eigenständig im Album und erzählt biografische Erinnerungen in eigenen Worten.",
+  "Pfk. leitet den Bewohner täglich für 10 Minuten zu kognitiven Aktivierungsübungen mit Gesellschaftsspielen an; Klient sitzt stabil am Tisch im Gemeinschaftsraum und nimmt aktiv am altersgerechten Spiel teil.",
+  "Pfk. bereitet täglich die Videotelefonie mit den Angehörigen auf dem einrichtungseigenen Tablet vor; Klient führt das Gespräch fokussiert und autonom, benötigt lediglich Hilfe bei der technischen Bedienung.",
+  "Pfk. leitet wöchentlich das strukturierte Gedächtnistraining mit vertrauten Wortspielen in der Kleingruppe an; Klient bringt sich sozial ein und vervollständigt vorgegebene Sätze oder Sprichwörter eigenständig.",
+  "Pfk. führt täglich abends eine strukturierte, beruhigende Tagesreflexion zur Nachtvorbereitung durch; Klient reflektiert den Tag im Sessel und benennt einen schönen Moment eigenständig."
 ],
 "Mobilität und Beweglichkeit":[
-  "Pfk. kontrolliert täglich vor der Mobilisierung Sitz, Zustand und Sauberkeit des Schuhwerks; Klient zieht festes Schuhwerk mit Unterstützung selbstständig an.",
-  "Pfk. kontrolliert täglich Bremsen, Fußrasten und Sitz des Rollstuhls im Bewohnerzimmer; Klient betätigt die Bremsen bei Transfers selbstständig.",
-  "Pfk. stellt täglich Antirutschmatte im Bad auf und kontrolliert deren Lage; Klient nutzt die Matte eigenständig beim Waschen.",
-  "Pfk. assistiert dem Klienten täglich bei Bedarf beim Transfer vom Sessel in den Stand mit dem Rollator im Wohnbereich; Klient übernimmt das Aufstehen aktiv mit den Armlehnen.",
-  "Pfk. leitet den Klienten täglich zu Transfers nach Kinästhetik-Prinzipien an; Klient aktiviert vorhandene Kraft zur maximalen Eigeninitiative.",
-  "Pfk. richtet die Aufstieghilfe am Bett funktionsgerecht ein und schult den Klienten in der Nutzung; Klient nutzt die Hilfe beim Aufstehen selbstständig.",
-  "Pfk. begleitet den Klienten täglich bei der Mobilisierung mit seitlicher Absicherung ohne Übernahme; Klient geht den vereinbarten Weg selbstständig mit dem Rollator.",
-  "Pfk. führt mit dem Klienten täglich gezieltes Gehtraining auf dem Flurparcours durch; Klient steigert die Gehstrecke wöchentlich um 10% eigenständig.",
-  "Pfk. kontrolliert wöchentlich Bremsen und Höheneinstellung des Rollators im Wohnbereich; Klient prüft täglich Sitz und Griffe selbstständig vor dem Gebrauch.",
-  "Pfk. führt dreimal wöchentlich Balancetraining mit dem Klienten am Haltegriff im Flur durch; Klient hält dabei die Balance aktiv für 30 Sekunden.",
-  "Pfk. positioniert den Klienten täglich druckentlastend im Sessel; Klient wechselt die Sitzposition auf Aufforderung selbstständig alle 2 Stunden.",
-  "Pfk. führt passive Bewegungsübungen aller großen Gelenke im vollständigen Bewegungsausmaß täglich auf dem Bett durch; Klient unterstützt aktiv soweit möglich.",
-  "Pfk. führt Positionswechsel bei immobilen Klienten alle 2 Stunden durch; Klient unterstützt durch Eigeninitiative soweit möglich.",
-  "Pfk. legt täglich die Hüftprotektoren an; Klient zieht die Schutzunterwäsche mit Anleitung selbstständig an.",
-  "Pfk. führt bei Aufnahme und vierteljährlich den Tinetti-Test durch; Klient führt alle Testaufgaben aktiv aus.",
-  "Pfk. überprüft wöchentlich die Einstellung aller Gehhilfen im Wohnbereich und nach Sturzereignissen; Klient meldet Veränderungen am Hilfsmittel eigenständig.",
-  "Pfk. koordiniert wöchentlich Mobilitätsziele interdisziplinär mit der Physiotherapie; Klient nimmt aktiv an den Physiotherapiesitzungen teil."
+  "Pfk. kontrolliert täglich vor der Mobilisation den festen Sitz, Zustand und die Sauberkeit des Schuhwerks; Klient zieht festes, geschlossenes Schuhwerk mit Unterstützung beim Einschlüpfen selbstständig an.",
+  "Pfk. kontrolliert täglich die Feststellbremsen, die Fußrasten und die Sitzposition des Rollstuhls im Zimmer; Klient betätigt die Rollstuhlbremsen bei anstehenden Transfers vollkommen selbstständig.",
+  "Pfk. stellt täglich die zertifizierte Antirutschmatte im Nassbereich auf und überprüft deren korrekte Lage; Klient nutzt die Matte als standsichere Basis eigenständig bei der Körperpflege am Waschbecken.",
+  "Pfk. assistiert bei Bedarf beim Transfer vom Sessel in den Stand durch Bereitstellung und Sicherung des Rollators; Klient übernimmt das Aufstehen eigenständig durch Abdrücken von den Armlehnen des Sessels.",
+  "Pfk. leitet den Klienten bei jedem Positionswechsel gezielt zu Transfers nach kinästhetischen Prinzipien an; Klient aktiviert die eigene Restkraft gezielt und steuert maximale Eigeninitiative bei.",
+  "Pfk. richtet die Aufstieghilfe (Bettgalgen) am Pflegebett funktionsgerecht ein und überprüft die Stabilität; Klient greift die Vorrichtung eigenständig und nutzt sie aktiv zum Aufsetzen an der Bettkante.",
+  "Pfk. begleitet die Mobilisation durch kontinuierliche seitliche Absicherung (Achselschluss) ohne direkte Übernahme; Klient geht den mit der Pfk vereinbarten Weg ausdauernd und selbstständig mit dem Rollator.",
+  "Pfk. führt mit dem Bewohner täglich ein gezieltes, dokumentiertes Gehtraining auf dem Parcours durch; Klient hält den Rollator sicher und steigert die zurückgelegte Gehstrecke wöchentlich eigenständig um 10%.",
+  "Pfk. überprüft wöchentlich die Feststellbremsen sowie die ergonomische Höheneinstellung des Rollators; Klient kontrolliert die Handgriffe und den Sitz des Hilfsmittels täglich eigenständig vor der Nutzung.",
+  "Pfk. führt dreimal wöchentlich ein strukturiertes Balancetraining direkt am montierten Wandhaltegriff durch; Klient hält den freien Stand unter Aufsicht aktiv und sicher für 30 Sekunden aufrecht.",
+  "Pfk. positioniert den Bewohner täglich gelenk- und druckentlastend im ergonomischen Sessel; Klient folgt der pflegerischen Aufforderung und wechselt die Sitzposition selbstständig alle 2 Stunden.",
+  "Pfk. führt passive Bewegungsübungen aller großen Gelenke im physiologischen Bewegungsausmaß im Bett durch; Klient entspannt die Muskulatur kooperativ und unterstützt die Bewegung aktiv, soweit es schmerzfrei möglich ist.",
+  "Pfk. führt den fahrplanmäßigen Positionswechsel bei Immobilität konsequent alle 2 Stunden im Pflegebett durch; Klient unterstützt die Drehung durch gezielten Einsatz der oberen Extremitäten und Eigeninitiative.",
+  "Pfk. legt täglich die Hüftprotektorenhosen bereit und kontrolliert den exakten Sitz der Protektoren; Klient zieht die spezialisierte Schutzunterwäsche unter verbaler Anleitung selbstständig an.",
+  "Pfk. führt bei Aufnahme sowie vierteljährlich den standardisierten Tinetti-Mobilitätstest durch; Klient absolviert alle vorgegebenen Testaufgaben (Aufstehen, Drehung, Gehen) aktiv und kooperativ.",
+  "Pfk. überprüft wöchentlich und nach jedem Sturzereignis die Indikation und technische Einstellung aller Gehhilfen; Klient meldet festgestellte Mängel oder Instabilitäten am Hilfsmittel sofort eigenständig dem Team.",
+  "Pfk. koordiniert wöchentlich die Mobilitätsziele interdisziplinär mit der behandelnden Physiotherapiepraxis; Klient nimmt aktiv, motiviert und regelmäßig an den angesetzten Physiotherapiesitzungen teil."
 ],
 "Krankheitsbezogene Anforderungen":[
-  "Pfk. bereitet wöchentlich die Medikamentenbox vor und kontrolliert Vollständigkeit; Klient überprüft täglich die Einnahme anhand der Wochendosette.",
-  "Pfk. reicht ärztlich verordnete Medikamente laut Stellplan zu den Mahlzeiten im Speisesaal an; Klient nimmt Medikamente unter Sichtkontrolle eigenständig ein.",
-  "Pfk. verabreicht Medikamente nach ärztlicher Anordnung zur vereinbarten Zeit; Klient nimmt die Medikamente eigenständig mit ausreichend Wasser ein.",
-  "Pfk. führt die Blutdruck- und Pulsmessung wöchentlich morgens mit dem Blutdruckgerät im Bewohnerzimmer durch; Klient verhält sich ruhig und benennt aktuelle Beschwerden.",
-  "Pfk. misst Blutdruck und Puls nach Anordnung und informiert den Arzt bei Grenzwertüberschreitungen; Klient meldet Beschwerden proaktiv.",
-  "Pfk. führt tägliche Vitalwertkontrolle durch und leitet Befunde an den Arzt weiter; Klient kooperiert und benennt aktuelle Beschwerden.",
-  "Pfk. misst täglich kapillar den Blutzucker nach ärztlicher Anordnung; Klient bereitet Lanzette und Teststreifen selbstständig vor.",
-  "Pfk. injiziert Insulin subkutan nach Spritzplan mit systematischer Rotation der Einstichstellen; Klient gibt die Körperstelle an und kooperiert.",
-  "Pfk. führt täglich Gewichtskontrolle mit der Personenwaage durch und informiert den Arzt bei Zunahme > 1 kg/Tag; Klient stellt sich täglich morgens selbstständig auf die Waage.",
-  "Pfk. führt Flüssigkeitsbilanzierung nach Anordnung mittels Bilanzierungsbogen durch; Klient dokumentiert die Trinkmenge auf dem Trinkprotokoll selbstständig.",
-  "Pfk. legt Kompressionsstrümpfe täglich morgens im entstauten Zustand nach ärztlicher Anordnung im Bewohnerzimmer an; Klient unterstützt durch Anspannen der Beinmuskulatur.",
-  "Pfk. leitet korrekte Inhalationstechnik mit dem Inhalationsgerät an und überprüft die Ausführung bei jeder Anwendung; Klient inhaliert nach Anleitung selbstständig.",
-  "Pfk. führt täglich systematische Hautinspektion gefährdeter Körperregionen durch; Klient benennt Druckstellen oder Missempfindungen eigenständig.",
-  "Pfk. führt Verbandwechsel nach ärztlicher Anordnung unter aseptischer Technik durch; Klient hält die betroffene Körperregion ruhig und kooperiert.",
-  "Pfk. erhebt 30 Minuten nach Medikamentengabe mittels NRS den Schmerzscore; Klient bewertet die Schmerzintensität auf der Skala eigenständig.",
-  "Pfk. koordiniert Terminplanung mit Wundmanager, Hausarzt und Facharzt; Klient nimmt alle vereinbarten Termine aktiv wahr."
+  "Pfk. stellt und richtet die Medikamentenbox wöchentlich nach Arztanordnung und kontrolliert die Verblisterung; Klient überprüft die Einnahmezeitpunkte täglich eigenständig anhand der bereitgestellten Wochendosette.",
+  "Pfk. reicht die ärztlich verordneten Medikamente laut gültigem Stellplan direkt zu den Hauptmahlzeiten an; Klient nimmt die Tabletten unter der pflegerischen Sichtkontrolle selbstständig und kooperativ ein.",
+  "Pfk. verabreicht die ärztlich angeordneten Arzneimittel pünktlich zur dokumentierten Richtzeit im Zimmer; Klient nimmt die Medikation autonom mit ausreichend bereitgestelltem Wasser ein.",
+  "Pfk. führt die Blutdruck- und Pulsmessung wöchentlich morgens vor der Medikation im Bett durch; Klient verhält sich während des Messvorgangs ruhig und benennt aktuelle Beschwerden eigenständig.",
+  "Pfk. misst Blutdruck sowie Puls nach ärztlicher Verordnung und informiert den Arzt bei Grenzwertüberschreitung; Klient achtet auf körperliche Warnsignale und meldet subjektive Beschwerden proaktiv dem Personal.",
+  "Pfk. führt die tägliche Vitalwertkontrolle durch, dokumentiert diese im System und leitet Befunde an den Hausarzt weiter; Klient kooperiert vollkommen bei den Messungen und äußert sein aktuelles Befinden klar.",
+  "Pfk. misst täglich kapillar den Blutzucker (nach Schema) unter Einhaltung der Hygienevorgaben; Klient wählt die Einstichstelle mit aus und bereitet Lanzette sowie Teststreifen selbstständig auf dem Tisch vor.",
+  "Pfk. injiziert das verordnete Insulin subkutan nach Spritzplan unter Beachtung einer systematischen Rotationsmethode; Klient gibt die zuletzt genutzte Einstichstelle an und kooperiert schmerzfrei bei der Injektion.",
+  "Pfk. führt die tägliche Gewichtskontrolle auf der geeichten Personenwaage durch und überwacht Ödembildungen; Klient stellt sich täglich morgens nach dem ersten Toilettengang selbstständig auf die Waage.",
+  "Pfk. führt die Flüssigkeitsbilanzierung mittels Bilanzierungsbogen nach ärztlicher Anordnung durch; Klient dokumentiert jede getrunkene Einheit eigenständig auf dem ausliegenden Trinkprotokoll.",
+  "Pfk. legt die medizinischen Kompressionsstrümpfe täglich morgens im entstauten Zustand der Beine im Bett an; Klient unterstützt den Vorgang aktiv durch gezieltes Anspannen der Beinmuskulatur.",
+  "Pfk. leitet die korrekte Inhalationstechnik mit dem verordneten Dosieraerosol an und überwacht die Anwendung; Klient führt die Inhalation nach der pflegerischen Anleitung vollständig selbstständig durch.",
+  "Pfk. führt täglich eine systematische Hautinspektion aller sturz- und druckgefährdeten Körperregionen durch; Klient entkleidet die Areale kooperativ und benennt lokale Druckstellen oder Missempfindungen eigenständig.",
+  "Pfk. führt den Verbandwechsel nach ärztlicher Behandlungsanordnung unter konsequent aseptischen Bedingungen durch; Klient hält die betroffene Extremität während des Verbandwechsels ruhig und kooperiert verlässlich.",
+  "Pfk. erhebt exakt 30 Minuten nach der Analgetikagabe mittels der Numerischen Rating-Skala (NRS) den Schmerzscore; Klient bewertet die Schmerzintensität auf der Skala (0–10) eigenständig und präzise.",
+  "Pfk. koordiniert die interdisziplinäre Terminplanung mit dem Wundmanager, Hausarzt und den Fachärzten; Klient nimmt alle vereinbarten Untersuchungstermine außerhalb und innerhalb des Hauses aktiv wahr."
 ],
 "Selbstversorgung":[
-  "Klient richtet Waschutensilien am Waschbecken eigenständig vor Beginn der Pflege vor; Pfk. ergänzt Waschschüssel und Pflegemittel im Bad.",
-  "Pfk. leitet den Klienten täglich zur selbstständigen Körperpflege am Waschbecken an; Klient führt erreichbare Körperpflege eigenständig durch.",
+  "Pfk. ergänzt die gefüllte Waschschüssel, frische Handtücher und die benötigten Pflegemittel barrierefrei im Bad; Klient richtet alle persönlichen Waschutensilien am Waschbecken eigenständig vor Beginn der Pflege vor.",
+  "Pfk. leitet den Klienten täglich zur aktivierenden, selbstständigen Körperpflege am Waschbecken verbal an; Klient führt alle für ihn erreichbaren Anteile der Körperpflege vollkommen eigenständig durch.",
   "Pfk. übernimmt täglich die Pflege des Rückens und der Unterextremitäten mit dem Waschlappen im Bad unter Wahrung der Intimsphäre und führt dabei eine Hautinspektion durch; Klient wäscht Gesicht und vorderen Oberkörper am Waschbecken selbstständig.",
-  "Pfk. führt die Intimpflege unter konsequenter Wahrung der Intimsphäre im Bad durch; Klient kooperiert und signalisiert Wohlbefinden.",
-  "Pfk. unterstützt den Klienten beim Toilettengang durch Transfersicherung im Bad; Klient nutzt die Haltegriffe eigenständig und führt die Intimhygiene soweit möglich selbst durch.",
-  "Pfk. kontrolliert Sitz und Zustand der Inkontinenzversorgung und wechselt bei Bedarf unter Wahrung der Würde im Bad; Klient meldet Inkontinenzereignisse eigenständig.",
-  "Pfk. cremt täglich alle trockenen und gefährdeten Hautpartien mit verordneter Pflegecreme ein; Klient cremt erreichbare Körperstellen selbstständig ein.",
-  "Pfk. führt Nagelpflege an Händen und Füßen nach Einrichtungsstandard durch; Klient hält die Extremitäten ruhig und kooperiert.",
-  "Pfk. reicht Utensilien zur Mundpflege an und überprüft das Ergebnis nach jeder Durchführung; Klient führt Mundpflege mit Zahnbürste und Pflegemitteln selbstständig durch.",
-  "Pfk. reinigt die Zahnprothese täglich im Ultraschallbad und übergibt sie nach Trocknung sauber; Klient setzt die gereinigte Prothese selbstständig ein.",
-  "Pfk. wählt gemeinsam mit dem Klienten täglich die Kleidung aus; Klient legt bevorzugte Kleidungsstücke selbstständig fest.",
-  "Pfk. assistiert dem Klienten bei Bedarf täglich beim An- und Entkleiden der Ober- und Unterbekleidung im Bad; Klient kleidet sich im erreichbaren Bereich aktiv selbstständig an.",
-  "Pfk. legt Kleidung in korrekter Reihenfolge bereit; Klient zieht sich vollständig selbstständig an.",
-  "Pfk. legt Spezialbesteck bereit und passt die Tischhöhe im Speisesaal an die ergonomische Sitzposition an; Klient nutzt das Spezialbesteck zur Nahrungsaufnahme selbstständig.",
-  "Pfk. bereitet Mahlzeiten individuell mundgerecht vor am Tisch im Speisesaal; Klient nimmt die Speisen mit dem bereitgestellten Hilfsmittel eigenständig zu sich.",
+  "Pfk. führt die vollständige Intimpflege unter konsequenter Wahrung der Scham- und Intimsphäre im Bad durch; Klient kooperiert bei den Positionswechseln und signalisiert Wohlbefinden während der Pflege.",
+  "Pfk. unterstützt den Klienten beim Toilettengang durch eine kontinuierliche personelle Transfersicherung im Bad; Klient nutzt die montierten Haltegriffe eigenständig und führt die Intimhygiene, soweit möglich, selbst durch.",
+  "Pfk. kontrolliert den Sitz und Zustand der Inkontinenzversorgung und wechselt diese bei Bedarf unter Wahrung der Würde im Bad; Klient meldet anstehende Versorgungswechsel oder Inkontinenzereignisse eigenständig dem Personal.",
+  "Pfk. cremt täglich alle trockenen und gefährdeten Hautpartien mit der verordneten medizinischen Pflegecreme ein; Klient übernimmt das Eincremen aller für ihn leicht erreichbaren Körperstellen selbstständig.",
+  "Pfk. führt die professionelle Nagelpflege an Händen und Füßen unter Beachtung des hauseigenen Einrichtungsstandards durch; Klient hält die Extremitäten während des Schneidens und Feilens ruhig und kooperiert vollständig.",
+  "Pfk. reicht alle benötigten Utensilien zur Mundpflege an und überprüft das Gesamtergebnis nach der Durchführung; Klient führt die Mundpflege mit der Zahnbürste und Zahnpasta vollkommen selbstständig am Waschbecken durch.",
+  "Pfk. reinigt die Zahnprothese täglich hygienisch im Ultraschallbad und übergibt diese getrocknet im Becher; Klient nimmt die gereinigte Prothese entgegen und setzt diese selbstständig und passgenau ein.",
+  "Pfk. wählt gemeinsam mit dem Klienten täglich die tages- und wetteradäquate Ober- und Unterbekleidung aus; Klient bestimmt seine bevorzugten Kleidungsstücke und Farbkombinationen vollkommen autonom.",
+  "Pfk. assistiert dem Klienten bei Bedarf täglich beim An- und Entkleiden der Ober- und Unterbekleidung im Bad; Klient kleidet sich im erreichbaren Oberkörper- und Armbereich aktiv und selbstständig an.",
+  "Pfk. legt alle Kleidungsstücke in der korrekten, ergonomischen Reihenfolge auf dem Stuhl bereit; Klient zieht sich anhand der visuellen Reihenfolge vollständig selbstständig und ohne Hilfe an.",
+  "Pfk. legt das ergonomische Spezialbesteck bereit und passt die Tischhöhe im Speisesaal individuell an; Klient nutzt das Spezialbesteck zur selbstständigen und sauberen oralen Nahrungsaufnahme.",
+  "Pfk. bereitet alle bereitgestellten Mahlzeiten am Tisch im Speisesaal individuell mundgerecht vor; Klient nimmt die vorbereiteten Speisen mit den bereitgestellten Hilfsmitteln eigenständig zu sich.",
   "Pfk. zerkleinert die Speisen des Klienten täglich mit Besteck zu allen Hauptmahlzeiten am Tisch im Speisesaal; Klient nimmt vorbereitete Speisen mit dem Spezialbesteck selbstständig auf.",
-  "Pfk. bietet dem Klienten bei jedem Kontakt aktiv ein Glas Wasser oder Tee an und dokumentiert die Trinkmenge im Trinkprotokoll; Klient trinkt selbstständig aus dem bereitgestellten Glas.",
-  "Pfk. kontrolliert täglich die Trinkmenge und erinnert den Klienten aktiv bei Unterschreitung; Klient trackt die Flüssigkeitsaufnahme auf dem Trinkprotokoll eigenständig."
+  "Pfk. bietet dem Klienten bei jedem persönlichen Kontakt aktiv ein frisches Glas Wasser, Saft oder Tee an; Klient greift das bereitgestellte Glas eigenständig und trinkt die angebotene Menge vollständig aus.",
+  "Pfk. kontrolliert täglich die Gesamttrinkmenge im System und erinnert den Klienten aktiv bei Unterschreitung; Klient trackt seine Flüssigkeitsaufnahme eigenständig auf dem im Zimmer ausliegenden Trinkprotokoll."
 ],
 "Leben in sozialen Beziehungen":[
   "Pfk. führt täglich mindestens 10 Minuten Einzelaktivierung (Vorlesen, Gespräch, Musik) mit dem Klienten im Bewohnerzimmer durch; Klient wählt das Angebot nach Wunsch aus.",
@@ -786,7 +618,7 @@ bg:{suite:'digital documentation Suite',search_ph:'Диагноза …',tf1:'Т
 ar:{suite:'digital documentation Suite',search_ph:'تشخيص …',tf1:'TF 1',tf2:'TF 2',tf3:'TF 3',tf4:'TF 4',tf5:'TF 5',tf6:'TF 6',bkat_sturz:'سقوط',bkat_dek:'تقرحات',bkat_ink:'سلس',bkat_ern:'تغذية',bkat_kon:'تقلص',bkat_sch:'ألم',bkat_exs:'جفاف',bkat_wohn:'تكيف',bkat_fin:'تمويل',welcome_title:'مرحبا',welcome_body:'⚕️ المسؤولية مع طاقم التمريض.',welcome_btn:'موافقة',modal_btn:'قبول',toast_add:'✓ تمت الإضافة',toast_copy:'📋 تم النسخ!',chip_diag_hdr:'⚕️ تشخيصات',chip_care_hdr:'✅ موارد',chips:[{label:'خرف',q:'demenz',cat:'diag'},{label:'سقوط',q:'sturz',cat:'diag'}]}
 };
 
-var SYN={demenz:["desorientiert","wortfindung","kurzzeitgedächtnis","validier","biograph","rot","gedächtnis","stimmungslabil","konfabulation","perseveration","nächtliche unruhe","demenz","zeitlich und örtlich"],sturz:["gangbild","gleichgewicht","sturzgefährdet","standsicherheit","sturzrisiko","schlurfen","fußheberschwäche","gangunsicherheit","sturzangst","hüftprotektor","nachtlicht","tinetti","rollator","im gang unsicher"],dekubitus:["druckentlastung","hautinspektion","lagerung","druck","scherkraft","sakrum","fersen","mazeration","braden"],diabetes:["blutzucker","insulin","unterzuckerung","spritzplan","diabetisch"],schmerz:["schmerz","analgetik","nrs","vas","besd","schmerztagebuch"],inkontinenz:["inkontinenz","kontinenz","blase","miktions","beckenboden","toilettengang"],exsikkose:["trinkmenge","trinkplan","flüssigkeit","mundtrockenheit","urinfarbe","glas wasser"],herzinsuffizienz:["bilanz","ödem","gewichtskontrolle","trinkmengenbeschränkung"],copd:["inhalation","sauerstoff","atemwege","inhalationstechnik"],kontraktur:["kontraktur","dehnung","funktionslagerung","schiene","bewegungsübung"],wunde:["wund","verbandwechsel","exsudat","aseptisch"],mangelernährung:["mangelernährung","gewicht","nahrungsaufnahme","mna","mundgerecht","speisen"],ressourcen:["eigenständig","selbstständig","autonom","kooperiert"],defizit:["eingeschränkt","nicht mehr","vernachlässigt","vergisst","defizit","nicht in der lage","kraftgemindert"],mobilität:["gangbild","rollator","transfer","gleichgewicht","mobilisation","sessel","aufstehen"],selbstversorgung:["waschen","körperpflege","ankleiden","nahrungsaufnahme","mundpflege","waschbecken","rücken"],finanzierung:["pflegegrad","pflegegeld","sachleistung","verhinderungspflege","kurzzeitpflege","finanzierung","§ 37","§ 36","§ 40","§ 45b"],hilfsmittel:["rollator","rollstuhl","pflegebett","haltegriff","hausnotruf","hilfsmittel","wohnraumanpassung","barrierefrei"],prophylaxen:["prophylaxe","prävention","dnqp","beratung"]};
+var SYN={demenz:["desorientiert","wortfindung","kurzzeitgedächtnis","validier","biograph","rot","gedächtnis","stimmungslabil","konfabulation","perseveration","nächtliche unruhe","demenz","zeitlich und örtlich"],sturz:["gangbild","gleichgewicht","sturzgefährdet","standsicherheit","sturzrisiko","schlurfen","fußheberschwäche","gangunsicherheit","sturzangst","sturzbedingte","hüftprotektor","nachtlicht","tinetti","rollator","im gang unsicher"],dekubitus:["druckentlastung","hautinspektion","lagerung","druck","scherkraft","sakrum","fersen","mazeration","braden"],diabetes:["blutzucker","insulin","unterzuckerung","spritzplan","diabetisch"],schmerz:["schmerz","analgetik","nrs","vas","besd","schmerztagebuch"],inkontinenz:["inkontinenz","kontinenz","blase","miktions","beckenboden","toilettengang"],exsikkose:["trinkmenge","trinkplan","flüssigkeit","mundtrockenheit","urinfarbe","glas wasser"],herzinsuffizienz:["bilanz","ödem","gewichtskontrolle","trinkmengenbeschränkung"],copd:["inhalation","sauerstoff","atemwege","inhalationstechnik"],kontraktur:["kontraktur","dehnung","funktionslagerung","schiene","bewegungsübung"],wunde:["wund","verbandwechsel","exsudat","aseptisch"],mangelernährung:["mangelernährung","gewicht","nahrungsaufnahme","mna","mundgerecht","speisen"],ressourcen:["eigenständig","selbstständig","autonom","vollständig ohne","gelingt.*(sicher|eigenständig)"],defizit:["eingeschränkt","nicht mehr","vernachlässigt","vergisst","defizit","nicht in der lage","kraftgemindert","unsicher","instabil","defizite"],mobilität:["gangbild","rollator","transfer","gleichgewicht","mobilisation","sessel","aufstehen"],selbstversorgung:["waschen","körperpflege","ankleiden","nahrungsaufnahme","mundpflege","waschbecken","rücken"],finanzierung:["pflegegrad","pflegegeld","sachleistung","verhinderungspflege","kurzzeitpflege","finanzierung","§ 37","§ 36","§ 40","§ 45b"],hilfsmittel:["rollator","rollstuhl","pflegebett","haltegriff","hausnotruf","hilfsmittel","wohnraumanpassung","barrierefrei"],prophylaxen:["prophylaxe","prävention","dnqp","beratung"]};
 
 var WK='clv45_w',WD=14,_m={};
 var _lg=k=>{try{return localStorage.getItem(k);}catch(e){return _m[k]!==undefined?_m[k]:null;}};
@@ -802,7 +634,8 @@ var BKN=k=>{var m={Sturz:'bkat_sturz',Dekubitus:'bkat_dek',Inkontinenz:'bkat_ink
   try{
     initW();
     var dn=document.getElementById('sbDnqp');
-    if(dn)DNQP.forEach(s=>{var d=document.createElement('div');d.className='sb-lnk';d.textContent='📋 '+s.n.split(' (')[0];d.onclick=()=>{closeSidebar();setTimeout(()=>openModal('DNQP: '+s.n,s.z),200);};dn.appendChild(d);});
+    // DNQP: Direkte Links zu DNQP-PDFs statt Modal-Text
+    if(dn)DNQP.forEach(s=>{var a=document.createElement('a');a.className='sb-lnk';a.textContent='📋 '+s.n;a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';dn.appendChild(a);});
     renderLegal();renderCat('sis');applyLang();
   }catch(e){console.error('[CLV] init:',e);}
 })();
@@ -895,16 +728,13 @@ function renderSearchChips(container){
 
 function getLogic(txt,domain){
   var d=domain.toLowerCase();
-  var isRes=/eigenständig|selbstständig|autonom|vollständig ohne|gelingt.*(sicher|eigenständig)|stabil und sicher|altersgerecht|gut erhalten/i.test(txt);
+  var isRes=/eigenständig|selbstständig|autonom|vollständig ohne|gelingt.*(sicher|eigenständig)|stabil und sicher|ausdauernd.*stabil|altersgerecht|gut erhalten/i.test(txt);
   var isDef=/nicht mehr|nicht sicher|nicht in der lage|erheblich.*(gemindert|eingeschränkt)|stark eingeschränkt|vernachlässigt|vergisst|benötigt.*(hilfe|unterstützung)|kraftgemindert|unsicher|instabil|defizite/i.test(txt);
   var hD=/desorientiert|wortfindungsstörung|kurzzeitgedächtnis|konfabulation|perseveration|validier|biographiearbeit|demenz|zeitlich und örtlich/i.test(txt);
-  var hS=/sturzgefährdet|sturzrisiko|sturzangst|gangbild.instabil|gangbild.unsicher|schlurfen|fußheberschwäche|gangunsicherheit|im gang unsicher/i.test(txt);
-  var hEx=/trinkmenge|trinkplan|exsikkose|mundtrockenheit|flüssigkeitsbilanz|reduzierte trinkmenge|glas wasser/i.test(txt);
-  var hE=/nahrungsaufnahme|mangelernährung|mna|mundgerecht|speisen|zerkleinert/i.test(txt);
+  var hS=/sturzgefährdet|sturzrisiko|sturzangst|sturzbedingte|gangbild.instabil|gangbild.unsicher|schlurfen|fußheberschwäche|gangunsicherheit|im gang unsicher/i.test(txt);
   var hMed=/medikamente.*nicht.*verwalten|stellplan|vitalwerte.*einschätzen/i.test(txt);
   var hSoz=/zeitungsrunde|gemeinschaftliche|einsamkeit|isolation|rückzug/i.test(txt);
   var hHaus=/schrank.*nachttisch|ordnung.*schrank|kleiderschrank/i.test(txt);
-
   if(/kognition|kommunikation/.test(d)){
     if(hD&&isDef)return{m:'Pfk. führt täglich validierende Kurzaktivierungen und Orientierungsförderung im Bewohnerzimmer durch; Klient benennt Datum und Erinnerungen aktiv.',a:'MMST; BESD-Skala; Uhrentest',b:'Beratung zu Kommunikationsstrategien bei Demenz (DNQP)',e:'DNQP Beziehungsgestaltung Demenz (2018)'};
     if(hD)return{m:'Pfk. führt täglich ROT, Biographiearbeit und kognitive Aktivierung am Tisch im Bewohnerzimmer durch; Klient nimmt aktiv teil.',a:'MMST; BESD-Skala',b:'Beratung zu Demenz-spezifischer Kommunikation',e:'DNQP Beziehungsgestaltung Demenz (2018)'};
@@ -912,24 +742,24 @@ function getLogic(txt,domain){
     return{m:'Pfk. gibt klare kurze Anweisungen und unterstützt durch Mimik/Gestik; Klient bestätigt Verständnis.',a:'MMST bei Verdacht auf kognitive Einschränkung',b:'Beratung zu Orientierungshilfen',e:'DNQP Beziehungsgestaltung'};
   }
   if(/mobilit|beweglichkeit/.test(d)){
-    if(hS&&isDef)return{m:'Pfk. assistiert täglich beim Transfer mit Rollator, kontrolliert Schuhwerk und begleitet Gehtraining; Klient übernimmt Aufstehen aktiv.',a:'Tinetti-Test; Sturzrisikoeinschätzung vierteljährlich',b:'Beratung zu Sturzprophylaxe, Schuhwerk, Nachtlicht, Hüftprotektor, Hausnotruf',e:'DNQP Sturzprophylaxe (1. Akt. 2013)'};
-    if(isRes)return{m:'Pfk. erhält vorhandene Mobilität; Klient führt täglich Bewegungsübungen eigenständig durch.',a:'Tinetti-Kontrolle bei Veränderungen',b:'Beratung bei Veränderungen; Hilfsmittelberatung',e:'DNQP Mobilität (1. Akt. 2020)'};
-    return{m:'Pfk. begleitet Mobilisierung mit Absicherung; Klient geht selbstständig mit Hilfsmittel.',a:'Barthel-Index; ggf. Tinetti-Test',b:'Beratung zur sicheren Mobilität und Wohnraumanpassung',e:'DNQP Mobilität (1. Akt. 2020)'};
+    if(hS&&isDef)return{m:'Pfk. kontrolliert täglich Schuhwerk und begleitet Mobilisierung mit Tinetti-Assessment; Klient geht selbstständig mit Rollator.',a:'Tinetti-Test; Sturzprotokoll; Braden-Skala',b:'Beratung zu Sturzprophylaxe, Hausnotruf, Hüftprotektor und Wohnraumanpassung',e:'DNQP Sturzprophylaxe (1. Akt. 2013)'};
+    if(isDef)return{m:'Pfk. führt gezielte Mobilisationsmaßnahmen und Kinästhetik durch; Klient aktiviert Restkraft eigenständig.',a:'Tinetti-Test; Barthel-Index',b:'Beratung zu Mobilisationshilfen und Physiotherapie',e:'DNQP Mobilität (1. Akt. 2020)'};
+    if(isRes)return{m:'Pfk. erhält Mobilität; Klient geht selbstständig nach individuellem Plan.',a:'Tinetti-Test zur Verlaufskontrolle',b:'Beratung zu Sturzprävention und Hilfsmitteln',e:'DNQP Mobilität (1. Akt. 2020)'};
+    return{m:'Pfk. führt gezielte Mobilisationsmaßnahmen durch; Klient wirkt aktiv mit.',a:'Tinetti-Test; Barthel-Index',b:'Beratung zu Mobilisationshilfen',e:'DNQP Mobilität (1. Akt. 2020)'};
   }
-  if(/krankheit|anforder/.test(d)){
-    if(hMed)return{m:'Pfk. stellt Medikamentenbox wöchentlich vor, reicht laut Stellplan an und führt Blutdruck-/Pulsmessung durch; Klient nimmt Medikamente eigenständig ein.',a:'Blutdruckprotokoll; Vitalzeichendokumentation',b:'Beratung zu Medikamentenverwaltung und Vitalwertüberwachung',e:'Fachspezifische Leitlinie beachten'};
-    return{m:'Pfk. führt medizinische Maßnahmen nach ärztlicher Anordnung durch und dokumentiert; Klient kooperiert und benennt Beschwerden.',a:'Krankheitsspezifisches Assessment',b:'Beratung zu Erkrankung, Medikation, Finanzierungsmöglichkeiten',e:'Fachspezifische Leitlinie beachten'};
+  if(/krankheitsbez|anforderung/.test(d)){
+    if(hMed||isDef)return{m:'Pfk. stellt Medikamente und führt Vitalwertkontrolle durch; Klient kooperiert bei Messungen und Einnahme.',a:'Braden-Skala; NRS; Blutzuckerprotokoll',b:'Beratung zu Medikamenten, Diagnosen und Selbstmanagement',e:'DNQP Schmerzmanagement; § 28 SGB XI'};
+    if(isRes)return{m:'Pfk. überwacht und unterstützt; Klient führt Selbstmanagement eigenständig durch.',a:'Kein Assessment erforderlich',b:'Beratung zu Prävention und Selbstmanagement',e:'§ 28 SGB XI'};
+    return{m:'Pfk. führt krankheitsbezogene Maßnahmen nach Anordnung durch; Klient kooperiert.',a:'Diagnose-spezifisches Assessment',b:'Beratung zu Erkrankung und Maßnahmen',e:'Fachspezifischer Expertenstandard'};
   }
   if(/selbstversorgung/.test(d)){
-    if(hE&&isDef)return{m:'Pfk. zerkleinert Speisen im Speisesaal und reicht Spezialbesteck an; Klient nimmt Mahlzeit selbstständig zu sich.',a:'MNA; Gewichtsverlauf; Schluckscreening',b:'Beratung zu angepasster Kost und Ess-/Trinkhilfsmitteln (§ 40 SGB XI)',e:'DNQP Ernährungsmanagement (1. Akt. 2017)'};
-    if(hEx&&isDef)return{m:'Pfk. bietet bei jedem Kontakt Glas Wasser/Tee an und dokumentiert im Trinkprotokoll; Klient trinkt und trackt eigenständig.',a:'Flüssigkeitsbilanz; Urinfarbe',b:'Beratung zu Trinkmenge (1,5-2 l/Tag), Trinkhilfen und Exsikkose-Zeichen',e:'DNQP Ernährungsmanagement (1. Akt. 2017)'};
-    if(isDef)return{m:'Pfk. übernimmt Rücken/Unterextremitäten im Bad und führt Hautinspektion durch; Klient wäscht Gesicht/Oberkörper am Waschbecken selbstständig.',a:'Barthel-Index; ATL-Selbstversorgungsprofil',b:'Beratung zu Pflegehilfsmitteln (§ 40), Ankleidehilfen und Wohnraumanpassung',e:'Aktivierende Pflege nach § 28a SGB XI'};
-    if(isRes)return{m:'Pfk. erhält Selbstständigkeit; Klient führt alle erreichbaren Bereiche eigenständig durch.',a:'Barthel-Index als Verlaufsdokumentation',b:'Beratung zu Hilfsmitteln und Pflegeleistungen',e:'Kein spezifischer Expertenstandard'};
-    return{m:'Pfk. unterstützt bei Körperpflege; Klient übernimmt erreichbare Bereiche eigenständig.',a:'Barthel-Index',b:'Beratung zu Hilfsmitteln und Finanzierung',e:'Kein spezifischer Expertenstandard'};
+    if(isDef)return{m:'Pfk. führt aktivierende Körperpflege durch und unterstützt bei Bedarf; Klient führt erreichbare Anteile eigenständig aus.',a:'Barthel-Index; OHAT (Mundpflege)',b:'Beratung zu Pflegehilfsmitteln und aktivierender Pflege',e:'DNQP Mundgesundheit (2022); § 28 SGB XI'};
+    if(isRes)return{m:'Pfk. erhält Selbstversorgungsfähigkeiten; Klient führt alle Körperpflege eigenständig durch.',a:'Kein Assessment erforderlich',b:'Derzeit kein Beratungsbedarf',e:'Kein spezifischer Expertenstandard'};
+    return{m:'Pfk. unterstützt aktivierend bei Körperpflege; Klient führt erreichbare Anteile selbst aus.',a:'Barthel-Index',b:'Beratung zu Pflegehilfsmitteln',e:'§ 28 SGB XI'};
   }
-  if(/sozial/.test(d)){
-    if(hSoz||isDef)return{m:'Pfk. motiviert täglich zur Zeitungsrunde und Gruppenangeboten; Klient nimmt aktiv teil. Pfk. richtet Videotelefonie ein; Klient führt Gespräch.',a:'GDS bei Rückzugssymptomatik',b:'Beratung zu sozialer Teilhabe und Entlastungsleistungen (§ 45b SGB XI)',e:'DNQP Beziehungsgestaltung Demenz (2018)'};
-    if(isRes)return{m:'Pfk. erhält soziale Ressourcen; Klient pflegt Kontakte eigenständig.',a:'Kein Assessment erforderlich',b:'Beratung bei Veränderungen',e:'Kein spezifischer Expertenstandard'};
+  if(/sozial|beziehung/.test(d)){
+    if(hSoz&&isDef)return{m:'Pfk. führt täglich 10 Min. Einzelaktivierung und Gruppenangebote durch; Klient nimmt aktiv teil.',a:'Beobachtung Sozialverhalten; Biographieanamnese',b:'Beratung zu sozialer Teilhabe und Gruppenangeboten',e:'DNQP Beziehungsgestaltung Demenz (2018)'};
+    if(isRes)return{m:'Pfk. fördert und erhält soziale Kontakte; Klient initiiert eigenständig Gespräche.',a:'Beobachtung Sozialverhalten',b:'Derzeit kein Beratungsbedarf',e:'Kein spezifischer Expertenstandard'};
     return{m:'Pfk. fördert soziale Kontakte; Klient nimmt aktiv teil.',a:'Beobachtung Sozialverhalten',b:'Beratung zu sozialer Teilhabe',e:'Kein spezifischer Expertenstandard'};
   }
   if(/haushalt|tagesstruktur/.test(d)){
@@ -977,7 +807,7 @@ function runAnalyse(){
   if(!sis.trim()&&!mass.trim()){result.className='an-res show error';result.innerHTML='<div class="an-rt">⚠️ Eingabe erforderlich</div><p style="font-size:.82rem">Bitte SiS-Beobachtungen und/oder Maßnahmen eingeben.</p>';scGrid.style.display='none';return;}
   var errors=[],warnings=[],checks=0;
   var P=[
-    {sKey:['sturz','sturzgefahr','gleichgewicht','im gang unsicher'],mKey:['sturzprophylaxe','schuhwerk','hüftprotektor','rollator','tinetti'],eMsg:'❌ Sturzrisiko – Sturzprophylaxe-Maßnahmen fehlen',critical:true},
+    {sKey:['sturz','sturzgefahr','gleichgewicht','im gang unsicher','sturzbedingte'],mKey:['sturzprophylaxe','schuhwerk','hüftprotektor','rollator','tinetti'],eMsg:'❌ Sturzrisiko – Sturzprophylaxe-Maßnahmen fehlen',critical:true},
     {sKey:['exsikk','trinkmenge','mundtrocken','reduzierte trinkmenge'],mKey:['flüssigkeit','trinkanreich','trinkplan','bilanz','glas wasser'],eMsg:'❌ Exsikkose-Zeichen – Flüssigkeitsmanagement fehlt',critical:true},
     {sKey:['mobil eingeschränkt','rollstuhl'],mKey:['mobilisation','gehtraining','transfer','kinästhetik'],eMsg:'⚠️ Mobilitätseinschränkung – Mobilisationsmaßnahmen nicht erkennbar',critical:false},
     {sKey:['desorientiert','demenz','zeitlich und örtlich'],mKey:['orientierung','rot','biographie','validier','kurzaktivierung'],eMsg:'⚠️ Kognitive Einschränkung – Orientierungsmaßnahmen nicht erkennbar',critical:false},
@@ -1032,7 +862,7 @@ function closeBanner(){var b=document.getElementById('disc-bar');if(!b)return;b.
 
 var FAQ_DATA=[
   {q:'Was ist Clariva?',a:'Clariva ist eine Web-App mit Pflege-Dokumentationsbausteinen nach SIS-Strukturmodell, DNQP-Expertenstandards, Wohnraumanpassungs- und Finanzierungsberatung nach SGB XI. 8 Sprachen. v4.5.'},
-  {q:'Dokumentationsprinzip Maßnahmen?',a:'Alle Maßnahmen folgen dem Prinzip:\nWer macht was, wann, womit, wo?\n\nJede Maßnahme enthält eine Kombination aus:\n• Pfk. = handelnde Pflegefachkraft\n• Klient = aktiv mitwirkende Person\n\nBeispiel:\n„Pfk. assistiert täglich beim Transfer mit Rollator im Wohnbereich; Klient übernimmt Aufstehen aktiv mit den Armlehnen."'},
+  {q:'Dokumentationsprinzip Maßnahmen?',a:'Alle Maßnahmen folgen dem Prinzip:\nWer macht was, wann, womit, wo?\n\nJede Maßnahme enthält eine Kombination aus:\n• Pfk. = handelnde Pflegefachkraft\n• Klient = aktiv mitwirkende Person\n\nBeispiel:\n„Pfk. assistiert bei Bedarf beim Transfer vom Sessel in den Stand durch Bereitstellung und Sicherung des Rollators; Klient übernimmt das Aufstehen eigenständig durch Abdrücken von den Armlehnen des Sessels."'},
   {q:'Wer trägt die fachliche Verantwortung?',a:'Die fachliche Verantwortung verbleibt vollständig beim Pflegepersonal. Clariva ist eine Formulierungshilfe. Jeden Baustein individuell prüfen!'},
   {q:'Was ist der Unterschied zwischen SiS und Maßnahmen?',a:'SiS = Beobachtungen (Was liegt vor? Schwere → Defizit → Ressource)\nMaßnahmen = Wer macht was, wann, womit, wo?\n\nDiese Trennung entspricht dem Strukturmodell nach SGB XI.'},
   {q:'Neue Beratungskategorien?',a:'Clariva enthält:\n🏠 Wohnraumanpassung & Hilfsmittel\n→ Pflegebett, Rollator, Haltegriffe, Hausnotruf, § 40 SGB XI (bis 4.000 €)\n\n💶 Pflege & Finanzierung\n→ Pflegegrade, Pflegegeld, Sachleistungen, Verhinderungspflege, Entlastungsleistungen'},
@@ -1052,7 +882,6 @@ function setLang(code){
   applyLang();renderCat(curCat);
 }
 function applyLang(){
-  var ss=document.getElementById('suiteSub');if(ss)ss.textContent=T('suite');
   var si=document.getElementById('searchInput');if(si)si.placeholder=T('search_ph');
 }
 

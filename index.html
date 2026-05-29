@@ -409,6 +409,55 @@ html.dark .dnqp-head,html.dark .dnqp-foot{background:rgba(14,28,22,.98);border-c
 html.dark .hdr-clariva-txt,html.dark .sb-clariva-txt{color:#A8C8DC;}
 html.dark .hdr-care-txt,html.dark .sb-care-txt{color:#56C8A8;}
 /* ───────────────────────────────────────────────────────────── */
+
+/* ── Update-Check Overlay ────────────────────────────────────── */
+#upd-overlay{display:none;position:fixed;inset:0;z-index:900;background:rgba(8,18,12,.65);backdrop-filter:blur(16px);align-items:flex-end;justify-content:center;padding:0;}
+@media(min-width:540px){#upd-overlay{align-items:center;padding:16px;}}
+#upd-overlay.show{display:flex;animation:fadeIn .28s var(--td);}
+.upd-box{background:var(--glh);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.82);width:100%;max-width:600px;max-height:90vh;border-radius:var(--rdx) var(--rdx) 0 0;display:flex;flex-direction:column;box-shadow:var(--s5);overflow:hidden;}
+@media(min-width:540px){.upd-box{border-radius:var(--rdx);max-height:86vh;}}
+.upd-head{padding:16px 18px 12px;border-bottom:2px solid var(--p);background:var(--glh);flex-shrink:0;}
+.upd-head-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.upd-icon{font-size:1.4rem;line-height:1;}
+.upd-title{font-family:var(--fp);font-weight:800;font-size:1rem;color:var(--txh);flex:1;}
+.upd-close{width:34px;height:34px;border-radius:8px;background:var(--rdb);border:1px solid var(--rdbd);color:var(--rd);font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--ta);flex-shrink:0;}
+.upd-close:hover{background:var(--rd);color:#fff;}
+.upd-subtitle{font-size:.78rem;color:var(--txm);line-height:1.5;}
+.upd-badge-row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+.upd-badge{font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:5px;text-transform:uppercase;letter-spacing:.6px;}
+.upd-badge.new{background:rgba(217,119,6,.14);color:#B85C00;border:1px solid rgba(217,119,6,.28);}
+.upd-badge.checked{background:rgba(74,122,107,.12);color:#2A5A4B;border:1px solid rgba(74,122,107,.24);}
+.upd-badge.info{background:rgba(42,126,176,.12);color:#1A5E90;border:1px solid rgba(42,126,176,.24);}
+.upd-body{flex:1;overflow-y:auto;padding:12px 14px;}
+.upd-section{margin-bottom:14px;}
+.upd-sec-title{font-family:var(--fp);font-size:.7rem;font-weight:700;color:var(--txl);letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;}
+.upd-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:var(--rb);border:1px solid var(--bdl);background:rgba(255,255,255,.5);margin-bottom:6px;transition:all var(--ta);}
+html.dark .upd-item{background:rgba(14,28,22,.5);}
+.upd-item-ico{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.upd-item-content{flex:1;min-width:0;}
+.upd-item-name{font-weight:700;font-size:.84rem;color:var(--txh);line-height:1.3;}
+.upd-item-meta{font-size:.72rem;color:var(--txm);margin-top:2px;}
+.upd-item-link{font-size:.7rem;color:var(--p);font-weight:600;margin-top:4px;cursor:pointer;text-decoration:none;display:inline-block;}
+.upd-item-link:hover{color:var(--pd);}
+.upd-item-status{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+.upd-chk{width:22px;height:22px;border-radius:6px;border:2px solid var(--bd);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--ta);font-size:.8rem;}
+.upd-chk.done{background:var(--p);border-color:var(--pd);color:#fff;}
+.upd-changelog{background:rgba(108,154,139,.06);border:1px solid var(--bdl);border-radius:var(--rb);padding:10px 12px;margin-bottom:6px;}
+.upd-cl-date{font-size:.68rem;font-weight:700;color:var(--p);margin-bottom:4px;}
+.upd-cl-item{font-size:.78rem;color:var(--txm);padding:2px 0;border-bottom:1px solid var(--bdl);}
+.upd-cl-item:last-child{border:none;}
+.upd-foot{padding:12px 14px;border-top:1px solid var(--bd);background:var(--glh);flex-shrink:0;display:flex;flex-direction:column;gap:6px;}
+.upd-foot-info{font-size:.7rem;color:var(--txl);text-align:center;}
+.upd-foot-btns{display:flex;gap:8px;}
+.upd-btn-done{flex:1;padding:12px;min-height:46px;border-radius:var(--rb);background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;font-weight:700;font-size:.88rem;cursor:pointer;transition:all var(--ta);}
+.upd-btn-done:hover{transform:translateY(-1px);}
+.upd-btn-later{padding:12px 16px;min-height:46px;border-radius:var(--rb);border:1.5px solid var(--bd);color:var(--txm);font-weight:600;font-size:.84rem;cursor:pointer;transition:all var(--ta);}
+.upd-btn-later:hover{background:rgba(108,154,139,.08);}
+.upd-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--am);margin-left:4px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+html.dark .upd-head,html.dark .upd-foot{background:rgba(14,28,22,.98);border-color:rgba(60,110,90,.25);}
+html.dark .upd-box{background:rgba(14,28,22,.98);border-color:rgba(60,110,90,.40);}
+/* ─────────────────────────────────────────────────────────────── */
 </style>
 </head>
 <body>
@@ -446,6 +495,7 @@ html.dark .hdr-care-txt,html.dark .sb-care-txt{color:#56C8A8;}
       </div>
     </div>
   </div>
+  <div class="sb-lnk" onclick="closeSidebar();setTimeout(openUpdateOverlay,200)" style="color:var(--am);font-weight:600;">🔄 <span data-i18n="sb_upd">Updates prüfen</span></div>
   <div class="sb-disc"><div class="sb-disc-t" data-i18n="sb_disc_t">⚕️ Haftungsausschluss</div><span data-i18n="sb_disc_body">Fachliche Verantwortung verbleibt beim Pflegepersonal!</span></div>
   <div class="sb-sec" data-i18n="sb_nav">Navigation</div>
   <div class="sb-lnk sb-lnk-p" onclick="closeSidebar();switchTab('bausteine')" data-i18n="nav_bst">🧩 <span data-i18n="nav_bst_lbl">Bausteine</span></div>
@@ -827,7 +877,7 @@ de:{
   content_lang_note:'📝 Fachliche Dokumentationsbausteine sind in Deutsch verfügbar.',
   type_sis:'SiS',type_mass:'Maßnahme',type_ber:'Beratung',type_logic:'Maßnahme',type_assess:'Assessment',type_counsel:'Beratung',type_std:'Expertenstandard',copy_empty:'⚠️ Keine Bausteine ausgewählt',doc_title:'Pflege-Dokumentationsset',doc_date:'Datum',doc_disc:'Fachliche Verantwortung verbleibt beim Pflegepersonal.',
   search_none:'Keine Treffer für',search_found:'Treffer für',an_p0:'❌ Sturzrisiko – Sturzprophylaxe fehlen',an_p1:'❌ Exsikkose – Flüssigkeitsmanagement fehlt',an_p2:'⚠️ Mobilitätseinschränkung nicht erkennbar',an_p3:'⚠️ Kognitive Einschränkung nicht erkennbar',an_p4:'❌ Schmerzangabe – Assessment fehlt',an_p5:'❌ Dekubitus – Druckentlastung fehlt',an_p6:'⚠️ Inkontinenz – Maßnahmen nicht erkennbar',an_p7:'❌ Ernährungsdefizit – Maßnahmen fehlen',an_p8:'❌ Wundproblematik – Wundversorgung fehlt',an_p9:'⚠️ Soziale Isolation nicht erkennbar',an_p10:'⚠️ Medikationsdefizit prüfen',an_p11:'⚠️ Haushaltsdefizit nicht erkennbar',an_warn_sis:'⚠️ SiS-Beobachtungen leer – Dokumentation empfohlen',an_warn_mass:'⚠️ Maßnahmenplanung leer – Dokumentation empfohlen',
-  sb_disc_t:'⚕️ Haftungsausschluss',sb_disc_body:'Fachliche Verantwortung verbleibt beim Pflegepersonal!',
+  sb_upd:'🔄 Updates prüfen',sb_disc_t:'⚕️ Haftungsausschluss',sb_disc_body:'Fachliche Verantwortung verbleibt beim Pflegepersonal!',
   chip_diag_hdr:'⚕️ Diagnosen & Erkrankungen',chip_care_hdr:'✅ Ressourcen & Pflegeprobleme',
   chips:[{label:'Demenz',q:'demenz',cat:'diag'},{label:'Sturz',q:'sturz',cat:'diag'},{label:'Dekubitus',q:'dekubitus',cat:'diag'},{label:'Diabetes',q:'diabetes',cat:'diag'},{label:'Schmerz',q:'schmerz',cat:'diag'},{label:'Inkontinenz',q:'inkontinenz',cat:'diag'},{label:'Exsikkose',q:'exsikkose',cat:'diag'},{label:'Herzinsuffizienz',q:'herzinsuffizienz',cat:'diag'},{label:'COPD',q:'copd',cat:'diag'},{label:'Kontraktur',q:'kontraktur',cat:'diag'},{label:'Wunde',q:'wunde',cat:'diag'},{label:'Mangelernährung',q:'mangelernährung',cat:'diag'},{label:'Ressourcen',q:'ressourcen',cat:'res'},{label:'Defizite',q:'defizit',cat:'prob'},{label:'Mobilität',q:'mobilität',cat:'pfleg'},{label:'Selbstversorgung',q:'selbstversorgung',cat:'pfleg'},{label:'Hilfsmittel',q:'hilfsmittel',cat:'pfleg'},{label:'Finanzierung',q:'finanzierung',cat:'pfleg'},{label:'Prophylaxen',q:'prophylaxen',cat:'pfleg'}]
 },
@@ -861,7 +911,7 @@ en:{
   content_lang_note:'📝 Professional care documentation modules are available in German.',
   type_sis:'SiS',type_mass:'Measure',type_ber:'Counselling',type_logic:'Care Measure',type_assess:'Assessment',type_counsel:'Counselling',type_std:'Expert Standard',copy_empty:'⚠️ No modules selected',doc_title:'Care Documentation Set',doc_date:'Date',doc_disc:'Professional responsibility remains with nursing staff.',
   search_none:'No results for',search_found:'results for',an_p0:'❌ Fall risk – Prevention measures missing',an_p1:'❌ Dehydration – Fluid management missing',an_p2:'⚠️ Mobility restriction – Measures not apparent',an_p3:'⚠️ Cognitive impairment – Measures not apparent',an_p4:'❌ Pain stated – Assessment missing',an_p5:'❌ Decubitus risk – Pressure relief missing',an_p6:'⚠️ Incontinence – Measures not apparent',an_p7:'❌ Nutritional deficit – Measures missing',an_p8:'❌ Wound problem – Wound care missing',an_p9:'⚠️ Social isolation – Activation not apparent',an_p10:'⚠️ Medication deficit – Review needed',an_p11:'⚠️ Household deficit – Structuring not apparent',an_warn_sis:'⚠️ SiS observations empty – documentation recommended',an_warn_mass:'⚠️ Care measures empty – documentation recommended',faq_data:[{q:'What is Clariva?',a:'Clariva is a web app with nursing documentation modules based on SIS model, DNQP expert standards and SGB XI financing. 8 languages. v4.5.'},{q:'Documentation principle?',a:'All measures: Who does what, when, how, where? Nurse = acting professional. Client = participating person.'},{q:'Who is responsible?',a:'Professional responsibility remains with nursing staff. Verify each module individually!'},{q:'SiS vs measures?',a:'SiS = Observations. Measures = Who does what, when, how, where?'},{q:'Withdrawal?',a:'Via app store only. Apple: reportaproblem.apple.com. Google: play.google.com/store/account/subscriptions'},{q:'Languages?',a:'8 languages: German, English, French, Russian, Bulgarian, Turkish, Vietnamese, Arabic.'},{q:'Contact',a:'Email: info@clariva.de. Version: Clariva v4.5'}],
-  sb_disc_t:'⚕️ Disclaimer',sb_disc_body:'Professional responsibility remains with nursing staff!',sb_sgb5:'⚖️ SGB V (German Social Law)',sb_sgb11:'⚖️ SGB XI (Care Insurance)',sb_gkv:'🔗 GKV Federal Association',
+  sb_upd:'🔄 Check for Updates',sb_disc_t:'⚕️ Disclaimer',sb_disc_body:'Professional responsibility remains with nursing staff!',sb_sgb5:'⚖️ SGB V (German Social Law)',sb_sgb11:'⚖️ SGB XI (Care Insurance)',sb_gkv:'🔗 GKV Federal Association',
   chip_diag_hdr:'⚕️ Diagnoses',chip_care_hdr:'✅ Resources',
   chips:[{label:'Dementia',q:'demenz',cat:'diag'},{label:'Fall',q:'sturz',cat:'diag'},{label:'Decubitus',q:'dekubitus',cat:'diag'},{label:'Diabetes',q:'diabetes',cat:'diag'},{label:'Pain',q:'schmerz',cat:'diag'},{label:'Incontinence',q:'inkontinenz',cat:'diag'},{label:'Dehydration',q:'exsikkose',cat:'diag'},{label:'Heart Failure',q:'herzinsuffizienz',cat:'diag'},{label:'COPD',q:'copd',cat:'diag'},{label:'Contracture',q:'kontraktur',cat:'diag'},{label:'Wound',q:'wunde',cat:'diag'},{label:'Malnutrition',q:'mangelernährung',cat:'diag'},{label:'Resources',q:'ressourcen',cat:'res'},{label:'Deficits',q:'defizit',cat:'prob'},{label:'Mobility',q:'mobilität',cat:'pfleg'},{label:'Self-care',q:'selbstversorgung',cat:'pfleg'},{label:'Aids',q:'hilfsmittel',cat:'pfleg'},{label:'Financing',q:'finanzierung',cat:'pfleg'},{label:'Prevention',q:'prophylaxen',cat:'pfleg'}]}
 }
@@ -1431,6 +1481,179 @@ function openDnqpExternal(){
 }
 // ─────────────────────────────────────────────────────────────
 
+
+// ── QUARTALS-UPDATE-SYSTEM ────────────────────────────────────
+var UPD_KEY='clv45_upd_checked';
+var UPD_ITEMS_KEY='clv45_upd_items';
+var UPD_INTERVAL=90; // Tage
+
+// Überwachte Quellen (DNQP, Recht, Leitlinien)
+var UPD_SOURCES=[
+  // DNQP Expertenstandards
+  {id:'dnqp_sturz',cat:'DNQP',ico:'📋',name:'DNQP Sturzprophylaxe',sub:'Letzter Stand: 2. Aktualisierung 2013 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2013-12-01'},
+  {id:'dnqp_deku',cat:'DNQP',ico:'📋',name:'DNQP Dekubitusprophylaxe',sub:'Letzter Stand: 2. Aktualisierung 2017 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2017-11-01'},
+  {id:'dnqp_entl',cat:'DNQP',ico:'📋',name:'DNQP Entlassungsmanagement',sub:'Letzter Stand: 2. Aktualisierung 2019 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2019-10-01'},
+  {id:'dnqp_schmerz',cat:'DNQP',ico:'📋',name:'DNQP Schmerzmanagement',sub:'Letzter Stand: 2. Aktualisierung 2020 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2020-09-01'},
+  {id:'dnqp_kont',cat:'DNQP',ico:'📋',name:'DNQP Kontinenzförderung',sub:'Letzter Stand: Aktualisierung 2024 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2024-06-01'},
+  {id:'dnqp_wunde',cat:'DNQP',ico:'📋',name:'DNQP Chronische Wunden',sub:'Letzter Stand: 2. Aktualisierung 2015 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2015-11-01'},
+  {id:'dnqp_ern',cat:'DNQP',ico:'📋',name:'DNQP Ernährungsmanagement',sub:'Letzter Stand: Aktualisierung 2017 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2017-09-01'},
+  {id:'dnqp_dem',cat:'DNQP',ico:'📋',name:'DNQP Demenz Beziehungsgestaltung',sub:'Letzter Stand: Erstveröffentlichung 2018 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2018-09-01'},
+  {id:'dnqp_mund',cat:'DNQP',ico:'📋',name:'DNQP Mundgesundheit',sub:'Letzter Stand: Erstveröffentlichung 2022 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2022-09-01'},
+  {id:'dnqp_haut',cat:'DNQP',ico:'📋',name:'DNQP Hautintegrität',sub:'Letzter Stand: Erstveröffentlichung 2023 · Alle 5–7 Jahre',url:'https://www.dnqp.de/expertenstandards-und-auditinstrumente/',cycle:84,lastApp:'2023-09-01'},
+  // Pflegerecht & Gesetze
+  {id:'sgb5',cat:'Recht',ico:'⚖️',name:'SGB V – Gesetzliche Krankenversicherung',sub:'Jährliche Änderungen möglich (GKV-Reform, Digitalgesetze)',url:'https://www.gesetze-im-internet.de/sgb_5/',cycle:90,lastApp:'2024-01-01'},
+  {id:'sgb11',cat:'Recht',ico:'⚖️',name:'SGB XI – Soziale Pflegeversicherung',sub:'Jährliche Änderungen (Pflegegeld, Pflegegrade, Leistungsbeträge)',url:'https://www.gesetze-im-internet.de/sgb_11/',cycle:90,lastApp:'2024-01-01'},
+  {id:'gkv',cat:'Recht',ico:'🔗',name:'GKV-Spitzenverband – Richtlinien',sub:'Regelmäßige Aktualisierungen der Pflegeversicherungsrichtlinien',url:'https://www.gkv-spitzenverband.de/pflegeversicherung/',cycle:90,lastApp:'2024-01-01'},
+  // Klinische Leitlinien
+  {id:'awmf',cat:'Leitlinien',ico:'🔬',name:'AWMF – Pflegerelevante Leitlinien',sub:'Wundversorgung, Dekubitus, Mangelernährung, Demenz',url:'https://www.awmf.org/leitlinien/',cycle:180,lastApp:'2024-01-01'},
+  {id:'mds',cat:'Qualität',ico:'📊',name:'MDS – Qualitätsprüfungs-Richtlinien (QPR)',sub:'Aktuelle Qualitätsindikatoren und Prüfgrundlagen',url:'https://www.mds-ev.de/richtlinien-publikationen/',cycle:180,lastApp:'2024-01-01'},
+];
+
+// Internes Changelog (App-Versionshistorie)
+var APP_CHANGELOG=[
+  {date:'2025-06-01',version:'v4.5',changes:[
+    'DNQP Kontinenzförderung (Aktualisierung 2024) eingearbeitet',
+    'DNQP Hautintegrität (2023) & Mundgesundheit (2022) neu aufgenommen',
+    'SGB XI Leistungsbeträge Stand 2024 aktualisiert',
+    'QPR-konforme Maßnahmen-Indizes für Schnellauswahl',
+    '8-sprachige Oberfläche (DE/EN/FR/RU/BG/TR/VI/AR)',
+    'Dark Mode, PWA-fähig, iOS/Android App-Icons'
+  ]},
+  {date:'2024-01-01',version:'v4.0',changes:[
+    'DNQP Schmerzmanagement 2. Aktualisierung 2020',
+    'SGB XI Anpassungen Pflegestärkungsgesetze',
+    'Beratungsmodule Wohnraumanpassung & Finanzierung'
+  ]}
+];
+
+function _updDaysSince(dateStr){
+  if(!dateStr)return 9999;
+  return Math.floor((Date.now()-new Date(dateStr).getTime())/(1000*60*60*24));
+}
+
+function _updCheckedItems(){
+  try{return JSON.parse(localStorage.getItem(UPD_ITEMS_KEY)||'{}');}catch(e){return{};}
+}
+
+function _updSaveChecked(items){
+  try{localStorage.setItem(UPD_ITEMS_KEY,JSON.stringify(items));}catch(e){}
+}
+
+function _updLastCheck(){
+  try{return localStorage.getItem(UPD_KEY)||null;}catch(e){return null;}
+}
+
+function shouldShowUpdate(){
+  var last=_updLastCheck();
+  if(!last)return true;
+  return _updDaysSince(last)>=UPD_INTERVAL;
+}
+
+function openUpdateOverlay(){
+  var isEN=lang==='en';
+  var checkedItems=_updCheckedItems();
+  var lastCheck=_updLastCheck();
+  var daysSince=lastCheck?_updDaysSince(lastCheck):null;
+
+  // Titel & Untertitel
+  document.getElementById('updTitle').textContent=isEN?'Quarterly Evidence Update Check':'Quartals-Update-Check';
+  document.getElementById('updSubtitle').textContent=isEN
+    ?'Review evidence-based sources for updates to guidelines, expert standards and legal regulations.'
+    :'Evidenzbasierte Quellen auf Aktualisierungen prüfen: Expertenstandards, Leitlinien und Rechtsgrundlagen.';
+  document.getElementById('updLaterBtn').textContent=isEN?'Remind in 30 days':'Später (30 Tage)';
+  document.getElementById('updBtn0').textContent=isEN?'✅ All reviewed – dismiss for 90 days':'✅ Alle geprüft – 90 Tage zurückstellen';
+
+  // Badges
+  var badges=document.getElementById('updBadges');
+  badges.innerHTML='';
+  var overdueCount=UPD_SOURCES.filter(s=>_updDaysSince(s.lastApp)>s.cycle*30).length;
+  var uncheckedCount=UPD_SOURCES.filter(s=>!checkedItems[s.id]).length;
+  if(overdueCount>0){var b=document.createElement('span');b.className='upd-badge new';b.textContent=(isEN?'Potentially outdated: ':'Möglicherweise veraltet: ')+overdueCount;badges.appendChild(b);}
+  var b2=document.createElement('span');b2.className='upd-badge info';b2.textContent=(isEN?'Sources monitored: ':'Quellen überwacht: ')+UPD_SOURCES.length;badges.appendChild(b2);
+  if(lastCheck){var b3=document.createElement('span');b3.className='upd-badge checked';b3.textContent=(isEN?'Last check: ':'Letzte Prüfung: ')+new Date(lastCheck).toLocaleDateString(isEN?'en-GB':'de-DE');badges.appendChild(b3);}
+
+  // Footer Info
+  var footInfo=document.getElementById('updFootInfo');
+  footInfo.textContent=lastCheck
+    ?(isEN?('Last reviewed '+daysSince+' days ago – recommended every 90 days'):('Letzte Prüfung vor '+daysSince+' Tagen – Empfehlung: alle 90 Tage'))
+    :(isEN?'First use – please review all sources':'Erstnutzung – bitte alle Quellen prüfen');
+
+  // Body
+  var body=document.getElementById('updBody');
+  body.innerHTML='';
+
+  // Changelog
+  var clSection=document.createElement('div');clSection.className='upd-section';
+  var clTitle=document.createElement('div');clTitle.className='upd-sec-title';
+  clTitle.textContent=isEN?'📋 App Version History':'📋 App-Versionshistorie';
+  clSection.appendChild(clTitle);
+  APP_CHANGELOG.slice(0,2).forEach(function(cl){
+    var clBox=document.createElement('div');clBox.className='upd-changelog';
+    var clDate=document.createElement('div');clDate.className='upd-cl-date';
+    clDate.textContent=cl.version+' · '+new Date(cl.date).toLocaleDateString(isEN?'en-GB':'de-DE');
+    clBox.appendChild(clDate);
+    cl.changes.forEach(function(ch){
+      var ci=document.createElement('div');ci.className='upd-cl-item';ci.textContent='· '+ch;clBox.appendChild(ci);
+    });
+    clSection.appendChild(clBox);
+  });
+  body.appendChild(clSection);
+
+  // Quellen gruppiert nach Kategorie
+  var cats={};
+  UPD_SOURCES.forEach(function(s){if(!cats[s.cat])cats[s.cat]=[];cats[s.cat].push(s);});
+  var catIcos={DNQP:'📋',Recht:'⚖️',Leitlinien:'🔬',Qualität:'📊'};
+  Object.keys(cats).forEach(function(cat){
+    var sec=document.createElement('div');sec.className='upd-section';
+    var st=document.createElement('div');st.className='upd-sec-title';
+    st.textContent=(catIcos[cat]||'•')+' '+cat;
+    sec.appendChild(st);
+    cats[cat].forEach(function(s){
+      var daysSinceApp=_updDaysSince(s.lastApp);
+      var isOverdue=daysSinceApp>s.cycle*30;
+      var isChecked=!!checkedItems[s.id];
+      var item=document.createElement('div');item.className='upd-item';
+      var ico=document.createElement('div');ico.className='upd-item-ico';ico.textContent=s.ico;
+      var cont=document.createElement('div');cont.className='upd-item-content';
+      var nm=document.createElement('div');nm.className='upd-item-name';
+      nm.innerHTML=s.name+(isOverdue&&!isChecked?'<span class="upd-dot"></span>':'');
+      var mt=document.createElement('div');mt.className='upd-item-meta';mt.textContent=s.sub;
+      var lk=document.createElement('a');lk.className='upd-item-link';
+      lk.textContent=isEN?'🔗 Check source':'🔗 Quelle prüfen';
+      lk.href=s.url;lk.target='_blank';lk.rel='noopener noreferrer';
+      lk.onclick=function(e){e.stopPropagation();var ci=_updCheckedItems();ci[s.id]=new Date().toISOString();_updSaveChecked(ci);chkBtn.classList.add('done');chkBtn.textContent='✓';};
+      cont.appendChild(nm);cont.appendChild(mt);cont.appendChild(lk);
+      var stat=document.createElement('div');stat.className='upd-item-status';
+      var chkBtn=document.createElement('button');chkBtn.className='upd-chk'+(isChecked?' done':'');
+      chkBtn.textContent=isChecked?'✓':'';
+      chkBtn.title=isEN?'Mark as reviewed':'Als geprüft markieren';
+      chkBtn.onclick=function(){var ci=_updCheckedItems();if(ci[s.id]){delete ci[s.id];chkBtn.classList.remove('done');chkBtn.textContent='';}else{ci[s.id]=new Date().toISOString();chkBtn.classList.add('done');chkBtn.textContent='✓';}; _updSaveChecked(ci);};
+      stat.appendChild(chkBtn);
+      item.appendChild(ico);item.appendChild(cont);item.appendChild(stat);
+      sec.appendChild(item);
+    });
+    body.appendChild(sec);
+  });
+
+  document.getElementById('upd-overlay').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function dismissUpdates(days){
+  try{localStorage.setItem(UPD_KEY,new Date().toISOString());}catch(e){}
+  document.getElementById('upd-overlay').classList.remove('show');
+  document.body.style.overflow='';
+}
+
+function markAllChecked(){
+  var ci=_updCheckedItems();
+  UPD_SOURCES.forEach(function(s){ci[s.id]=new Date().toISOString();});
+  _updSaveChecked(ci);
+  dismissUpdates(90);
+  showToast(lang==='en'?'✅ All sources marked as reviewed':'✅ Alle Quellen als geprüft markiert');
+}
+// ─────────────────────────────────────────────────────────────
+
 </script>
 
 <!-- DNQP EXPERTENSTANDARD OVERLAY – 5 Ebenen -->
@@ -1460,5 +1683,30 @@ function openDnqpExternal(){
   </div>
 </div>
 
+
+<!-- UPDATE CHECK OVERLAY -->
+<div id="upd-overlay" role="dialog" aria-modal="true">
+  <div class="upd-box">
+    <div class="upd-head">
+      <div class="upd-head-row">
+        <span class="upd-icon">🔄</span>
+        <span class="upd-title" id="updTitle">Quartals-Update-Check</span>
+        <button class="upd-close" onclick="dismissUpdates(90)" aria-label="Schließen">✕</button>
+      </div>
+      <div class="upd-subtitle" id="updSubtitle">Evidenzbasierte Quellen prüfen</div>
+      <div class="upd-badge-row" id="updBadges"></div>
+    </div>
+    <div class="upd-body" id="updBody"></div>
+    <div class="upd-foot">
+      <div class="upd-foot-info" id="updFootInfo"></div>
+      <div class="upd-foot-btns">
+        <button class="upd-btn-done" id="updBtn0" onclick="markAllChecked()">✅ Alle geprüft – 90 Tage zurückstellen</button>
+        <button class="upd-btn-later" onclick="dismissUpdates(30)" id="updLaterBtn">Später (30 Tage)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
+</html>
 </html>
